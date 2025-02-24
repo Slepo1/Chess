@@ -7,8 +7,15 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //ui->centralwidget->resize(640, 480);
-    //ui->frame->setMinimumSize(200, 200);
+    //ui->background->setStyleSheet( "background: url(:/img/resources/backgroundImg.jpg)" );
+
+    //ui->background->setStyleSheet("background-color: #FF5722;");
+
+    //ui->background->setStyleSheet("background-color: #FF5722;");
+
+    //qDebug() << ui->frame->styleSheet();
+
+
 }
 
 

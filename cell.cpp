@@ -1,9 +1,10 @@
 #include "cell.h"
 
-Cell::Cell(QWidget *&newWidget)
+Cell::Cell(QFrame *&newWidget)
 {
-    setMinimumSize(200, 200);
-    qDebug() << "Privet";
+    //setMinimumSize(200, 200);
+    //qDebug() << "Privet";
+    setStyleSheet( "border: 1px solid black;" );
 }
 
 void Cell::newResize()

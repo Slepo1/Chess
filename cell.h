@@ -8,7 +8,7 @@ class Cell : public QFrame
 {
     Q_OBJECT
 public:
-    Cell(QWidget *&newWidget);
+    Cell(QFrame *&newWidget);
 
     void newResize();
 };
