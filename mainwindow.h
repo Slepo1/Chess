@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+#include <QFile>
 #include <QMainWindow>
 #include "cell.h"
 
@@ -20,6 +22,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    void setupStyle ();
 
     //Cell cellField();
 

@@ -7,13 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //ui->background->setStyleSheet( "background: url(:/img/resources/backgroundImg.jpg)" );
 
-    //ui->background->setStyleSheet("background-color: #FF5722;");
-
-    //ui->background->setStyleSheet("background-color: #FF5722;");
-
-    //qDebug() << ui->frame->styleSheet();
+    setupStyle();
 
 
 }
@@ -23,4 +18,22 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setupStyle()
+{
+    QFile styleFile("chess.qss");  // Используем относительный путь
+
+    if (!styleFile.exists()) {
+        throw std::runtime_error("Файл chess.qss не найден");
+    }
+
+    if (!styleFile.open(QFile::ReadOnly)) {
+        throw std::runtime_error("Не удалось открыть файл chess.qss");
+    }
+
+    QString style(styleFile.readAll());
+    qApp->setStyleSheet(style);
+
+    styleFile.close();
 }
