@@ -11,9 +11,13 @@ MainWindow::MainWindow(QWidget *parent)
     setupStyle();
 
 
+    /*QLabel *fig = new QLabel (ui->frame_8);
+    fig->setObjectName ("fig");
+
+    ui->frame_8->getLayout().addWidget(fig);
+
+    fig->setText("PRIKOL"); */
 }
-
-
 
 MainWindow::~MainWindow()
 {
@@ -36,4 +40,16 @@ void MainWindow::setupStyle()
     qApp->setStyleSheet(style);
 
     styleFile.close();
+}
+
+void MainWindow::mousePressEvent (QMouseEvent *event)
+{
+    QPoint mousePos = event->position ().toPoint ();
+    qDebug () << mousePos;
+    qDebug () << childAt (mousePos)->objectName ();
+    if (childAt (mousePos)->Cell::checkFig (mousePos))
+    {
+        /*Дейтсвия при наличии фигуры...*/
+    }
+
 }

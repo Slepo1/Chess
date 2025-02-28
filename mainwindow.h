@@ -25,7 +25,6 @@ private:
 
     void setupStyle ();
 
-    //Cell cellField();
-
+    void mousePressEvent (QMouseEvent *event) override;
 };
 
