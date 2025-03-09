@@ -4,6 +4,7 @@
 #include <QFile>
 #include <QMainWindow>
 #include "cell.h"
+#include "figure.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -26,5 +27,9 @@ private:
     void setupStyle ();
 
     void mousePressEvent (QMouseEvent *event) override;
+
+    // Логика при нажатии мыши на Figure
+    void pressFig ();
+
 };
 

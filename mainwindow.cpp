@@ -46,10 +46,19 @@ void MainWindow::mousePressEvent (QMouseEvent *event)
 {
     QPoint mousePos = event->position ().toPoint ();
     qDebug () << mousePos;
-    qDebug () << childAt (mousePos)->objectName ();
-    if (childAt (mousePos)->Cell::checkFig (mousePos))
+    //qDebug () << childAt (mousePos)->objectName ();
+    QObject *child = childAt (mousePos);
+    // Логика если нажимаемый объект оказался Figure или его наследником
+    if (auto *specificChild = qobject_cast<Figure *> (child))
     {
-        /*Дейтсвия при наличии фигуры...*/
+        qDebug () << specificChild->objectName ();
+
+
     }
+
+}
+
+void pressFig ()
+{
 
 }

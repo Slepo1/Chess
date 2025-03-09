@@ -83,7 +83,7 @@ QLabel { font: bold; }</string>
           </widget>
          </item>
          <item row="5" column="7">
-          <widget class="Cell" name="frame_43">
+          <widget class="Cell" name="cell_39">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -101,7 +101,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="1" column="7">
-          <widget class="Cell" name="frame_64">
+          <widget class="Cell" name="cell_7">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -119,7 +119,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="1" column="5">
-          <widget class="Cell" name="frame_52">
+          <widget class="Cell" name="cell_5">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -137,7 +137,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="5" column="6">
-          <widget class="Cell" name="frame_42">
+          <widget class="Cell" name="cell_38">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -165,7 +165,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="7" column="5">
-          <widget class="Cell" name="frame_26">
+          <widget class="Cell" name="cell_53">
            <property name="autoFillBackground">
             <bool>false</bool>
            </property>
@@ -186,7 +186,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="6" column="2">
-          <widget class="Cell" name="frame_13">
+          <widget class="Cell" name="cell_42">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -204,7 +204,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="6" column="6">
-          <widget class="Cell" name="frame_37">
+          <widget class="Cell" name="cell_46">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -232,7 +232,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="4" column="8">
-          <widget class="Cell" name="frame_55">
+          <widget class="Cell" name="cell_32">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -250,7 +250,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="3" column="3">
-          <widget class="Cell" name="frame_20">
+          <widget class="Cell" name="cell_19">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -285,7 +285,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="1" column="8">
-          <widget class="Cell" name="frame_63">
+          <widget class="Cell" name="cell_8">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -303,7 +303,7 @@ Cell {border: 1px solid black;}</string>
           </widget>
          </item>
          <item row="6" column="5">
-          <widget class="Cell" name="frame_36">
+          <widget class="Cell" name="cell_45">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -321,7 +321,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="5" column="3">
-          <widget class="Cell" name="frame_16">
+          <widget class="Cell" name="cell_35">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -339,7 +339,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="3" column="7">
-          <widget class="Cell" name="frame_57">
+          <widget class="Cell" name="cell_23">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -357,7 +357,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="4" column="2">
-          <widget class="Cell" name="frame_17">
+          <widget class="Cell" name="cell_26">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -375,7 +375,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="8" column="4">
-          <widget class="Cell" name="frame_30">
+          <widget class="Cell" name="cell_60">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -393,7 +393,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="1" column="3">
-          <widget class="Cell" name="frame_24">
+          <widget class="Cell" name="cell_3">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -411,7 +411,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="1" column="4">
-          <widget class="Cell" name="frame_48">
+          <widget class="Cell" name="cell_4">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -429,7 +429,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="3" column="6">
-          <widget class="Cell" name="frame_56">
+          <widget class="Cell" name="cell_22">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -447,7 +447,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="4" column="5">
-          <widget class="Cell" name="frame_49">
+          <widget class="Cell" name="cell_29">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -465,7 +465,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="2" column="6">
-          <widget class="Cell" name="frame_58">
+          <widget class="Cell" name="cell_14">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -483,7 +483,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="1" column="6">
-          <widget class="Cell" name="frame_59">
+          <widget class="Cell" name="cell_6">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -511,7 +511,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="7" column="6">
-          <widget class="Cell" name="frame_27">
+          <widget class="Cell" name="cell_54">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -529,7 +529,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="5" column="2">
-          <widget class="Cell" name="frame_15">
+          <widget class="Cell" name="cell_34">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -547,7 +547,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="5" column="8">
-          <widget class="Cell" name="frame_44">
+          <widget class="Cell" name="cell_40">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -565,7 +565,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="3" column="1">
-          <widget class="Cell" name="frame_8">
+          <widget class="Cell" name="cell_17">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -583,7 +583,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="4" column="1">
-          <widget class="Cell" name="frame_7">
+          <widget class="Cell" name="cell_25">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -601,7 +601,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="7" column="8">
-          <widget class="Cell" name="frame_29">
+          <widget class="Cell" name="cell_56">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -629,7 +629,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="5" column="5">
-          <widget class="Cell" name="frame_41">
+          <widget class="Cell" name="cell_37">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -647,7 +647,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="6" column="1">
-          <widget class="Cell" name="frame_5">
+          <widget class="Cell" name="cell_41">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -672,7 +672,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="7" column="7">
-          <widget class="Cell" name="frame_28">
+          <widget class="Cell" name="cell_55">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -690,7 +690,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="8" column="2">
-          <widget class="Cell" name="frame_12">
+          <widget class="Cell" name="cell_58">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -718,7 +718,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="2" column="4">
-          <widget class="Cell" name="frame_47">
+          <widget class="Cell" name="cell_12">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -736,7 +736,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="3" column="8">
-          <widget class="Cell" name="frame_61">
+          <widget class="Cell" name="cell_24">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -754,7 +754,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="2" column="8">
-          <widget class="Cell" name="frame_62">
+          <widget class="Cell" name="cell_16">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -772,7 +772,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="7" column="1">
-          <widget class="Cell" name="frame_4">
+          <widget class="Cell" name="cell_49">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -790,7 +790,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="8" column="5">
-          <widget class="Cell" name="frame_31">
+          <widget class="Cell" name="cell_61">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -828,7 +828,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="6" column="8">
-          <widget class="Cell" name="frame_39">
+          <widget class="Cell" name="cell_48">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -846,7 +846,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="4" column="4">
-          <widget class="Cell" name="frame_45">
+          <widget class="Cell" name="cell_28">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -864,7 +864,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="2" column="7">
-          <widget class="Cell" name="frame_60">
+          <widget class="Cell" name="cell_15">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -912,7 +912,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="3" column="5">
-          <widget class="Cell" name="frame_50">
+          <widget class="Cell" name="cell_21">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -930,7 +930,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="5" column="1">
-          <widget class="Cell" name="frame_6">
+          <widget class="Cell" name="cell_33">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -948,7 +948,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="Cell" name="frame_9">
+          <widget class="Cell" name="cell_9">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -966,7 +966,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="4" column="6">
-          <widget class="Cell" name="frame_53">
+          <widget class="Cell" name="cell_30">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -994,7 +994,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="3" column="4">
-          <widget class="Cell" name="frame_46">
+          <widget class="Cell" name="cell_20">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -1012,7 +1012,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="Cell" name="frame_10">
+          <widget class="Cell" name="cell_1">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -1030,7 +1030,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="8" column="3">
-          <widget class="Cell" name="frame_3">
+          <widget class="Cell" name="cell_59">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -1048,7 +1048,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="8" column="8">
-          <widget class="Cell" name="frame_34">
+          <widget class="Cell" name="cell_64">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -1066,7 +1066,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="7" column="3">
-          <widget class="Cell" name="frame_2">
+          <widget class="Cell" name="cell_51">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -1084,7 +1084,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="1" column="2">
-          <widget class="Cell" name="frame_23">
+          <widget class="Cell" name="cell_2">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -1102,7 +1102,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="4" column="7">
-          <widget class="Cell" name="frame_54">
+          <widget class="Cell" name="cell_31">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -1120,7 +1120,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="7" column="4">
-          <widget class="Cell" name="frame_25">
+          <widget class="Cell" name="cell_52">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -1138,7 +1138,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="2" column="3">
-          <widget class="Cell" name="frame_22">
+          <widget class="Cell" name="cell_11">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -1156,7 +1156,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="5" column="4">
-          <widget class="Cell" name="frame_40">
+          <widget class="Cell" name="cell_36">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -1174,7 +1174,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="6" column="7">
-          <widget class="Cell" name="frame_38">
+          <widget class="Cell" name="cell_47">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -1192,7 +1192,7 @@ Cell {border: 1px solid black;}</string>
           </widget>
          </item>
          <item row="2" column="5">
-          <widget class="Cell" name="frame_51">
+          <widget class="Cell" name="cell_13">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -1210,7 +1210,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="6" column="4">
-          <widget class="Cell" name="frame_35">
+          <widget class="Cell" name="cell_44">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -1228,7 +1228,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="4" column="3">
-          <widget class="Cell" name="frame_18">
+          <widget class="Cell" name="cell_27">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -1256,7 +1256,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="6" column="3">
-          <widget class="Cell" name="frame_14">
+          <widget class="Cell" name="cell_43">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -1274,7 +1274,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="2" column="2">
-          <widget class="Cell" name="frame_21">
+          <widget class="Cell" name="cell_10">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -1292,7 +1292,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="3" column="2">
-          <widget class="Cell" name="frame_19">
+          <widget class="Cell" name="cell_18">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -1320,7 +1320,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="7" column="2">
-          <widget class="Cell" name="frame">
+          <widget class="Cell" name="cell_50">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -1338,7 +1338,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="8" column="6">
-          <widget class="Cell" name="frame_32">
+          <widget class="Cell" name="cell_62">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -1356,7 +1356,7 @@ background-color: rgb(149, 145, 130);
           </widget>
          </item>
          <item row="8" column="7">
-          <widget class="Cell" name="frame_33">
+          <widget class="Cell" name="cell_63">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
@@ -1374,7 +1374,7 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="8" column="1">
-          <widget class="Cell" name="frame_11">
+          <widget class="Cell" name="cel_57">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
