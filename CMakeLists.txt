@@ -33,6 +33,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         cell.h cell.cpp
         resources.qrc
         figure.h figure.cpp
+        rook.h rook.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Chess APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

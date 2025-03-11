@@ -1,5 +1,4 @@
-#ifndef FIGURE_H
-#define FIGURE_H
+#pragma once
 
 #include <QLabel>
 #include <QObject>
@@ -8,7 +7,10 @@ class Figure : public QLabel
 {
     Q_OBJECT
 public:
-    Figure (QLabel *&fig);
+    Figure (QWidget *parent = nullptr);
+    virtual ~Figure();
+
+    virtual void moveTo (const QPoint newPosition);
 };
 
-#endif // FIGURE_H
+

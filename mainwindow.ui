@@ -51,7 +51,7 @@ QLabel { font: bold; }</string>
 </string>
       </property>
       <property name="frameShape">
-       <enum>QFrame::Shape::Box</enum>
+       <enum>QFrame::Box</enum>
       </property>
       <property name="lineWidth">
        <number>6</number>
@@ -68,7 +68,7 @@ QLabel { font: bold; }</string>
             <string>1</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -78,7 +78,7 @@ QLabel { font: bold; }</string>
             <string>C</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+            <set>Qt::AlignHCenter|Qt::AlignTop</set>
            </property>
           </widget>
          </item>
@@ -90,10 +90,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -108,10 +108,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -126,10 +126,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -144,10 +144,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -160,7 +160,7 @@ background-color: rgb(53, 30, 13);
             <string>5</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -175,10 +175,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -193,10 +193,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -211,10 +211,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -227,7 +227,7 @@ background-color: rgb(149, 145, 130);
             <string>B</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+            <set>Qt::AlignHCenter|Qt::AlignTop</set>
            </property>
           </widget>
          </item>
@@ -239,10 +239,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -257,10 +257,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -280,7 +280,7 @@ background-color: rgb(149, 145, 130);
             <string>E</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+            <set>Qt::AlignHCenter|Qt::AlignTop</set>
            </property>
           </widget>
          </item>
@@ -292,10 +292,10 @@ background-color: rgb(53, 30, 13);
 Cell {border: 1px solid black;}</string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -310,10 +310,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -328,10 +328,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -346,10 +346,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -364,10 +364,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -382,10 +382,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -400,10 +400,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -418,10 +418,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -436,10 +436,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -454,10 +454,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -472,10 +472,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -490,10 +490,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -506,7 +506,7 @@ background-color: rgb(53, 30, 13);
             <string>8</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -518,10 +518,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -536,10 +536,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -554,10 +554,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -572,10 +572,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -590,10 +590,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -608,10 +608,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -624,7 +624,7 @@ background-color: rgb(53, 30, 13);
             <string>D</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+            <set>Qt::AlignHCenter|Qt::AlignTop</set>
            </property>
           </widget>
          </item>
@@ -636,10 +636,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -654,10 +654,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -679,10 +679,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -697,10 +697,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -713,7 +713,7 @@ background-color: rgb(149, 145, 130);
             <string>F</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+            <set>Qt::AlignHCenter|Qt::AlignTop</set>
            </property>
           </widget>
          </item>
@@ -725,10 +725,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -743,10 +743,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -761,10 +761,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -779,14 +779,27 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
            </property>
+           <widget class="QLabel" name="label_19">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>20</y>
+              <width>58</width>
+              <height>18</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
           </widget>
          </item>
          <item row="8" column="5">
@@ -797,10 +810,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -813,7 +826,7 @@ background-color: rgb(53, 30, 13);
             <string>G</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+            <set>Qt::AlignHCenter|Qt::AlignTop</set>
            </property>
           </widget>
          </item>
@@ -823,7 +836,7 @@ background-color: rgb(53, 30, 13);
             <string>7</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -835,10 +848,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -853,10 +866,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -871,10 +884,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -887,7 +900,7 @@ background-color: rgb(53, 30, 13);
             <string>6</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -897,7 +910,7 @@ background-color: rgb(53, 30, 13);
             <string>2</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -907,7 +920,7 @@ background-color: rgb(53, 30, 13);
             <string>3</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -919,10 +932,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -937,10 +950,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -955,10 +968,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -973,10 +986,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -989,7 +1002,7 @@ background-color: rgb(149, 145, 130);
             <string>A</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+            <set>Qt::AlignHCenter|Qt::AlignTop</set>
            </property>
           </widget>
          </item>
@@ -1001,10 +1014,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1019,10 +1032,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -1037,10 +1050,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1055,10 +1068,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -1073,10 +1086,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -1091,10 +1104,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1109,10 +1122,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1127,10 +1140,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1145,10 +1158,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1163,10 +1176,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1181,10 +1194,10 @@ background-color: rgb(53, 30, 13);
 Cell {border: 1px solid black;}</string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::NoFrame</enum>
+            <enum>QFrame::NoFrame</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Raised</enum>
+            <enum>QFrame::Raised</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1199,10 +1212,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1217,10 +1230,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -1235,10 +1248,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1251,7 +1264,7 @@ background-color: rgb(53, 30, 13);
             <string>4</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -1263,10 +1276,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1281,10 +1294,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -1299,10 +1312,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1315,7 +1328,7 @@ background-color: rgb(53, 30, 13);
             <string>H</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+            <set>Qt::AlignHCenter|Qt::AlignTop</set>
            </property>
           </widget>
          </item>
@@ -1327,10 +1340,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1345,10 +1358,10 @@ background-color: rgb(149, 145, 130);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>2</number>
@@ -1363,10 +1376,10 @@ background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1374,17 +1387,17 @@ background-color: rgb(53, 30, 13);
           </widget>
          </item>
          <item row="8" column="1">
-          <widget class="Cell" name="cel_57">
+          <widget class="Cell" name="cell_57">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 0, 0);
 background-color: rgb(53, 30, 13);
 </string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::Shape::Box</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Shadow::Plain</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
             <number>1</number>
@@ -1413,7 +1426,7 @@ background-color: rgb(53, 30, 13);
   <customwidget>
    <class>Cell</class>
    <extends>QFrame</extends>
-   <header location="global">/home/alexblind/devel/Chess/cell.h</header>
+   <header location="global">/home/alexblind/devel/autochess/Chess/cell.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

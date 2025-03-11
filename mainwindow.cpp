@@ -10,6 +10,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     setupStyle();
 
+    // Заполнение двумерного массива Cell'ами
+    loadCells ();
+
+    showCells ();
+
+    addFig ();
+
+
 
     /*QLabel *fig = new QLabel (ui->frame_8);
     fig->setObjectName ("fig");
@@ -17,6 +25,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->frame_8->getLayout().addWidget(fig);
 
     fig->setText("PRIKOL"); */
+
+
+
+
+
+    stretchCoef ();
 }
 
 MainWindow::~MainWindow()
@@ -42,6 +56,41 @@ void MainWindow::setupStyle()
     styleFile.close();
 }
 
+void MainWindow::loadCells ()
+{
+    int numberCell = 1;
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            QString currentObjectName = QString ("cell_%1").arg (numberCell);
+            backfield[i][j] = this->findChild<Cell*>(currentObjectName);
+            numberCell++;
+
+            // Ошибка, если метод findChild не смог найти нужный объект Cell currentObjectName
+            if (!backfield[i][j])
+                throw std::runtime_error (QString ("Объект '%1' не найден")
+                                              .arg (currentObjectName)
+                                              .toStdString ());
+        }
+
+    }
+
+}
+
+void MainWindow::showCells ()
+{
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            qDebug() << backfield[i][j]->objectName ();
+        }
+        qDebug () << "\n";
+
+    }
+}
+
 void MainWindow::mousePressEvent (QMouseEvent *event)
 {
     QPoint mousePos = event->position ().toPoint ();
@@ -49,7 +98,8 @@ void MainWindow::mousePressEvent (QMouseEvent *event)
     //qDebug () << childAt (mousePos)->objectName ();
     QObject *child = childAt (mousePos);
     // Логика если нажимаемый объект оказался Figure или его наследником
-    if (auto *specificChild = qobject_cast<Figure *> (child))
+    //if (auto *specificChild = qobject_cast<Figure *> (child))
+    if (auto *specificChild = qobject_cast<QLabel *> (child))
     {
         qDebug () << specificChild->objectName ();
 
@@ -58,7 +108,29 @@ void MainWindow::mousePressEvent (QMouseEvent *event)
 
 }
 
-void pressFig ()
+void clickOnFig ()
 {
+
+}
+
+void MainWindow::addFig ()
+{
+
+    Rook *tmp = new Rook ();
+    tmp->setText ("ROOK");
+    tmp->setAlignment(Qt::AlignCenter);
+    // Лейбл расширяется по всей доступной площади
+    tmp->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    ui->cell_1->getLayout ().addWidget(tmp);
+}
+
+void MainWindow::stretchCoef ()
+{
+    // Устанавливаем одинаковые коэффициенты растяжения для всех строк и столбцов
+    for (int i = 0; i < 10; ++i)
+    {
+        ui->gridLayout->setRowStretch(i, 1);
+        ui->gridLayout->setColumnStretch(i, 1);
+    }
 
 }

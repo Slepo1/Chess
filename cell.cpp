@@ -33,6 +33,10 @@ void Cell::newResize ()
 void Cell::createLayout ()
 {
     horizontalLayout = new QHBoxLayout (this);
+    // Устраняем лишние отступы
+    horizontalLayout->setContentsMargins(0, 0, 0, 0);
+    // Центрирование содержимого по горизонтали
+    horizontalLayout->setAlignment(Qt::AlignCenter);
     horizontalLayout->setObjectName ("layout" + this->objectName ());
 }
 

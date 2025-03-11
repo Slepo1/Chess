@@ -27,6 +27,8 @@ public:
     void newResize ();
 
     QHBoxLayout &getLayout ();
+
+
 };
 
 
