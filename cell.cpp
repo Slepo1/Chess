@@ -45,19 +45,30 @@ QHBoxLayout &Cell::getLayout ()
     return *horizontalLayout;
 }
 
-bool Cell::checkFig (QPoint point)
+bool Cell::checkFig ()
 {
-    //Проверить через childAt() наличие фигуры внутри клетки
+
+    // Поиск внутри Cell'a объекта типа QLabel или его наследников
+    QList<QLabel*> labels = this->findChildren<QLabel*>();
+    if (!labels.isEmpty())
+    {
+        // Если есть хоть одна Figure (QLabel)
+        qDebug () << "Найден объект типа QLabel или наследник";
+        return true;
+    }
+
+    return false;
 }
 
-/*void Cell::mousePressEvent (QMouseEvent *event)
+void Cell::addFig (Figure *figure)
 {
-
-
-    qDebug () << objectName ();
-    QPoint mousePos = event->position ().toPoint ();
-    qDebug () << mousePos;
-}*/
+    if (checkFig () == true)
+    {
+        // Нужно прописать логику в случае на данной клетке уже есть фигура
+        return;
+    }
+    getLayout ().addWidget (figure);
+}
 
 
 

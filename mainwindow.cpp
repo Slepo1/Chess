@@ -10,12 +10,17 @@ MainWindow::MainWindow(QWidget *parent)
 
     setupStyle();
 
+    // Задаю кол-во фигур одного цвета
+    resizeFigure ();
+
     // Заполнение двумерного массива Cell'ами
     loadCells ();
 
     showCells ();
 
-    addFig ();
+    setupFigure ();
+
+    //addFig ();
 
 
 
@@ -38,6 +43,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::resizeFigure ()
+{
+    whiteFigure.resize (FIGURE_COUNT);
+    blackFigure.resize (FIGURE_COUNT);
+}
+
 void MainWindow::setupStyle()
 {
     QFile styleFile("chess.qss");  // Используем относительный путь
@@ -55,6 +66,13 @@ void MainWindow::setupStyle()
 
     styleFile.close();
 }
+
+/*void MainWindow::setupFigure ()
+{
+    // Пихаем в указатель на Figure нужный нам тип фигуры
+    Figure *tmp = new Rook (nullptr);
+    backfield[0][0]->addFig (tmp);
+}*/
 
 void MainWindow::loadCells ()
 {
@@ -113,16 +131,21 @@ void clickOnFig ()
 
 }
 
-void MainWindow::addFig ()
+
+
+/*void MainWindow::addFig (Figure *figure, Cell *cell)
 {
 
-    Rook *tmp = new Rook ();
-    tmp->setText ("ROOK");
-    tmp->setAlignment(Qt::AlignCenter);
+
+    // В указатель на Figure пихаем нужную нам фигуру
+    //Figure *tmp = new Figure (nullptr);
+
+
+    figure->setAlignment(Qt::AlignCenter);
     // Лейбл расширяется по всей доступной площади
-    tmp->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    ui->cell_1->getLayout ().addWidget(tmp);
-}
+    figure->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    cell->getLayout ().addWidget(tmp);
+}*/
 
 void MainWindow::stretchCoef ()
 {

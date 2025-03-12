@@ -7,6 +7,7 @@
 #include <QLabel>
 #include <QPoint>
 #include <QMouseEvent>
+#include "figure.h"
 
 class Cell : public QFrame
 {
@@ -16,18 +17,19 @@ class Cell : public QFrame
 
     QHBoxLayout *horizontalLayout;
 
-    bool checkFig (QPoint point);
+    bool checkFig ();
 
     //void mousePressEvent (QMouseEvent *event) override;
 
+    QHBoxLayout &getLayout ();
 
 public:
     Cell (QFrame *&newWidget);
 
     void newResize ();
 
-    QHBoxLayout &getLayout ();
-
+    // Метод лучше оставить отдельный, тк будем проверять checkfig заполненность клетки
+    void addFig (Figure *figure);
 
 };
 

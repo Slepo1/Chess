@@ -7,6 +7,9 @@
 #include "figure.h"
 #include "rook.h"
 
+// Кол-во фигур одного цвета
+static constexpr int FIGURE_COUNT = 16;
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -30,9 +33,18 @@ private:
     // Создание двумерного массива указателей на Cell'ы моего поля
     Cell *backfield[8][8];
 
-    //Rook rook;
+    // Массив указателей на белые фигуры
+    QVector <Figure*> whiteFigure;
+
+    // Массив указателей на черные фигуры
+    QVector <Figure*> blackFigure;
+
+    void resizeFigure ();
 
     void setupStyle ();
+
+    // Загрузка всех фигур на backfield
+    void setupFigure ();
 
     void loadCells ();
 
@@ -44,7 +56,7 @@ private:
     void clickOnFig ();
 
     // Теперь добавляет QLabel на весь Cell, а также центрирует его
-    void addFig ();
+    //void addFig (Figure *figure);
 
     // Чтобы все виджеты в gridLayout имели одинаковые размеры
     void stretchCoef ();

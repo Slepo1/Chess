@@ -2,9 +2,14 @@
 
 Figure::Figure (QWidget *parent) : QLabel (parent)
 {
-    // Сделать падинги ноль, чтобы label занимал весь фрейм, и childAt вовзращал label
+    // Центрируем фигуру
+    setAlignment(Qt::AlignCenter);
+    // Лейбл расширяется по всей доступной площади
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
+    setText ("UNKNOWN_FIGURE");
 
+    //setObjectName ("Figure" + parent->objectName ());
 }
 
 Figure::~Figure ()
@@ -12,7 +17,7 @@ Figure::~Figure ()
 
 }
 
-void Figure::moveTo (const QPoint newPosition)
+void Figure::moveTo (MainWindow *window)
 {
     // Логика перемещения
 }

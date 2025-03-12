@@ -1,6 +1,22 @@
 <RCC>
-    <qresource prefix="/img">
+    <qresource prefix="/background">
         <file>resources/backgroundImg.jpg</file>
+    </qresource>
+    <qresource prefix="/bFigures">
+        <file>resources/tatiana/bB.png</file>
+        <file>resources/tatiana/bK.png</file>
+        <file>resources/tatiana/bN.png</file>
+        <file>resources/tatiana/bP.png</file>
+        <file>resources/tatiana/bQ.png</file>
+        <file>resources/tatiana/bR.png</file>
+    </qresource>
+    <qresource prefix="/wFigures">
+        <file>resources/tatiana/wB.png</file>
+        <file>resources/tatiana/wK.png</file>
+        <file>resources/tatiana/wN.png</file>
+        <file>resources/tatiana/wP.png</file>
+        <file>resources/tatiana/wQ.png</file>
+        <file>resources/tatiana/wR.png</file>
     </qresource>
 </RCC>
 

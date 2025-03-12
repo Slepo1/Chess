@@ -7,5 +7,8 @@ class Rook : public Figure
 {
     Q_OBJECT
 public:
-    Rook ();
+    Rook (QWidget *parent = nullptr);
+    ~Rook ();
+
+    void moveTo (MainWindow *window) override;
 };
