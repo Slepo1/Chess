@@ -4,30 +4,29 @@
 
 void MainWindow::setupFigure ()
 {
-    // Пихаем в указатель на Figure нужный нам тип фигуры
-    whiteFigure[0] = new Rook (nullptr);
-    whiteFigure[1] = new Figure (nullptr);
-    whiteFigure[2] = new Figure (nullptr);
-    whiteFigure[3] = new Figure (nullptr);
-    whiteFigure[4] = new Figure (nullptr);
-    whiteFigure[5] = new Figure (nullptr);
-    whiteFigure[6] = new Figure (nullptr);
-    whiteFigure[7] = new Figure (nullptr);
-    whiteFigure[8] = new Rook (nullptr);
-    whiteFigure[9] = new Figure (nullptr);
-    whiteFigure[10] = new Figure (nullptr);
-    whiteFigure[11] = new Figure (nullptr);
-    whiteFigure[12] = new Figure (nullptr);
-    whiteFigure[13] = new Figure (nullptr);
-    whiteFigure[14] = new Figure (nullptr);
-    whiteFigure[15] = new Figure (nullptr);
+    // Пихаем в указатель на Figure нужный нам тип фигуры с указанием родительского виджета
+    whiteFigure[0] = new Rook (Figure::WHITE, backfield, backfield[7][0]);
+    whiteFigure[1] = new Figure (Figure::WHITE, backfield, backfield[7][1]);
+    whiteFigure[2] = new Figure (Figure::WHITE, backfield, backfield[7][2]);
+    whiteFigure[3] = new Figure (Figure::WHITE, backfield, backfield[7][3]);
+    whiteFigure[4] = new Figure (Figure::WHITE, backfield, backfield[7][4]);
+    whiteFigure[5] = new Figure (Figure::WHITE, backfield, backfield[7][5]);
+    whiteFigure[6] = new Figure (Figure::WHITE, backfield, backfield[7][6]);
+    whiteFigure[7] = new Rook (Figure::WHITE, backfield, backfield[7][7]);
+    whiteFigure[8] = new Figure (Figure::WHITE, backfield, backfield[6][0]);
+    whiteFigure[9] = new Figure (Figure::WHITE, backfield, backfield[6][1]);
+    whiteFigure[10] = new Figure (Figure::WHITE, backfield, backfield[6][2]);
+    whiteFigure[11] = new Figure (Figure::WHITE, backfield, backfield[6][3]);
+    whiteFigure[12] = new Figure (Figure::WHITE, backfield, backfield[6][4]);
+    whiteFigure[13] = new Figure (Figure::WHITE, backfield, backfield[6][5]);
+    whiteFigure[14] = new Figure (Figure::WHITE, backfield, backfield[6][6]);
+    whiteFigure[15] = new Figure (Figure::WHITE, backfield, backfield[6][7]);
 
-    backfield[7][0]->addFig (whiteFigure[0]);
-    backfield[7][7]->addFig (whiteFigure[8]);
+    /// Возможно проблема в том, что раньше я добавлял объект именно с помощью
+    /// addFig, а сейчас конструктор сам создает объекты и это может быть
+    /// проблемой
 
+    //backfield[7][0]->addFig (whiteFigure[0]);
+    //backfield[7][7]->addFig (whiteFigure[7]);
 
-    /*for (int i = 0; i < whiteFigure.size (); i++)
-    {
-        backfield[i / 8][i % 8]->addFig (whiteFigure[i]);
-    }*/
 }

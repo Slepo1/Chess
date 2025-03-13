@@ -7,8 +7,17 @@ class Rook : public Figure
 {
     Q_OBJECT
 public:
-    Rook (QWidget *parent = nullptr);
+    Rook (Color color, const QVector<QVector<Cell *>> &backfield,
+          QWidget *parent = nullptr);
     ~Rook ();
 
-    void moveTo (MainWindow *window) override;
+    // Надо в аргумент закинуть массив Cell'ов
+    void calculateMove ();
+
+private:
+    // Логика перемещения для белой ладьи
+    void performActionForWhite () override;
+
+    // Логика перемещения для чёрной ладьи
+    void performActionForBlack () override;
 };

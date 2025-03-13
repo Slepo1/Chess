@@ -25,13 +25,18 @@ public:
     MainWindow (QWidget *parent = nullptr);
     ~MainWindow ();
 
+    bool clickProcess () { return clickProcessing; }
 
+    void setClickProcess (bool clicking) { clickProcessing = clicking; }
 
 private:
     Ui::MainWindow *ui;
 
+    // Флаг означающий нажал ли пользователь на фигуру или нет
+    bool clickProcessing;
+
     // Создание двумерного массива указателей на Cell'ы моего поля
-    Cell *backfield[8][8];
+    QVector<QVector<Cell*>> backfield;
 
     // Массив указателей на белые фигуры
     QVector <Figure*> whiteFigure;
@@ -46,6 +51,8 @@ private:
     // Загрузка всех фигур на backfield
     void setupFigure ();
 
+
+
     void loadCells ();
 
     void showCells ();
@@ -53,7 +60,7 @@ private:
     void mousePressEvent (QMouseEvent *event) override;
 
     // Логика при нажатии мыши на Figure
-    void clickOnFig ();
+    void clickOnFig (Figure *figure);
 
     // Теперь добавляет QLabel на весь Cell, а также центрирует его
     //void addFig (Figure *figure);

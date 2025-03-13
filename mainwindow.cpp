@@ -7,7 +7,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-
     setupStyle();
 
     // Задаю кол-во фигур одного цвета
@@ -21,17 +20,6 @@ MainWindow::MainWindow(QWidget *parent)
     setupFigure ();
 
     //addFig ();
-
-
-
-    /*QLabel *fig = new QLabel (ui->frame_8);
-    fig->setObjectName ("fig");
-
-    ui->frame_8->getLayout().addWidget(fig);
-
-    fig->setText("PRIKOL"); */
-
-
 
 
 
@@ -67,25 +55,21 @@ void MainWindow::setupStyle()
     styleFile.close();
 }
 
-/*void MainWindow::setupFigure ()
-{
-    // Пихаем в указатель на Figure нужный нам тип фигуры
-    Figure *tmp = new Rook (nullptr);
-    backfield[0][0]->addFig (tmp);
-}*/
 
 void MainWindow::loadCells ()
 {
     int numberCell = 1;
+    backfield.resize (8);
     for (int i = 0; i < 8; i++)
     {
+        backfield[i].resize(8);
         for (int j = 0; j < 8; j++)
         {
             QString currentObjectName = QString ("cell_%1").arg (numberCell);
             backfield[i][j] = this->findChild<Cell*>(currentObjectName);
             numberCell++;
 
-            // Ошибка, если метод findChild не смог найти нужный объект Cell currentObjectName
+            // Ошибка, если метод findChild не смог найти нужный объект Cell
             if (!backfield[i][j])
                 throw std::runtime_error (QString ("Объект '%1' не найден")
                                               .arg (currentObjectName)
@@ -112,40 +96,48 @@ void MainWindow::showCells ()
 void MainWindow::mousePressEvent (QMouseEvent *event)
 {
     QPoint mousePos = event->position ().toPoint ();
-    qDebug () << mousePos;
-    //qDebug () << childAt (mousePos)->objectName ();
-    QObject *child = childAt (mousePos);
-    // Логика если нажимаемый объект оказался Figure или его наследником
-    //if (auto *specificChild = qobject_cast<Figure *> (child))
-    if (auto *specificChild = qobject_cast<QLabel *> (child))
+
+    if (clickProcess () == true)
     {
-        qDebug () << specificChild->objectName ();
+        // Логика если пользователь уже нажал на figure
+
+
+
+        // Процесс клика выключаем
+        setClickProcess (false);
+    }
+    else
+    {
+        qDebug () << mousePos;
+        QObject *child = childAt (mousePos);
+
+        // Логика если нажимаемый объект оказался Figure или его наследником
+        if (auto *specificChild = qobject_cast<Figure *> (child))
+        {
+            // Пользователь нажал на фигуру
+            clickOnFig (specificChild);
+
+            // Процесс клика включаем только если пользователь нажал на фигуру
+            setClickProcess (true);
+        }
 
 
     }
 
-}
 
-void clickOnFig ()
-{
 
 }
 
-
-
-/*void MainWindow::addFig (Figure *figure, Cell *cell)
+void MainWindow::clickOnFig (Figure *figure)
 {
+    // Нужно будет сделать дополнительную проверку на то, является ход белых/чёрных и цвет фигуры
+    qDebug () << figure->objectName ();
 
+    // Начинаем процесс вычисления нужных нам Cell'ов
+    figure->calculateMove ();
 
-    // В указатель на Figure пихаем нужную нам фигуру
-    //Figure *tmp = new Figure (nullptr);
+}
 
-
-    figure->setAlignment(Qt::AlignCenter);
-    // Лейбл расширяется по всей доступной площади
-    figure->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    cell->getLayout ().addWidget(tmp);
-}*/
 
 void MainWindow::stretchCoef ()
 {

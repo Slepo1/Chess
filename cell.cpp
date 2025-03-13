@@ -2,23 +2,7 @@
 
 Cell::Cell (QFrame *&newWidget)
 {
-    // QLabel *fig = new QLabel (this);
 
-    // // Получаем размеры виджета и лейбла
-    // int w = this->width();
-    // int h = this->height();
-    // int lw = fig->sizeHint().width();
-    // int lh = fig->sizeHint().height();
-
-    // // Вычисляем центральную позицию
-    // int x = (w - lw) / 2;
-    // int y = (h - lh) / 2;
-
-    // // Перемещаем лейбл в центр
-    // fig->move(x, y);
-
-    // fig->setObjectName("fig" + newWidget->objectName());
-    // fig->setText("PRIKOL");
 
     createLayout ();
 
@@ -27,7 +11,7 @@ Cell::Cell (QFrame *&newWidget)
 
 void Cell::newResize ()
 {
-    resize (200, 200);
+    //resize (200, 200);
 }
 
 void Cell::createLayout ()
