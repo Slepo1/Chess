@@ -3,7 +3,7 @@
 #include <QLabel>
 #include <QObject>
 
-class Cell; // Мэйби из-за этого отрисовывает плохо
+class Cell;
 
 class Figure : public QLabel
 {
@@ -12,7 +12,8 @@ class Figure : public QLabel
 public:
     enum Color {WHITE, BLACK};
 
-    Figure (Color color, const QVector<QVector<Cell*>>& backfield, QWidget *parent = nullptr);
+    Figure (Color color, const QVector<QVector<Cell *>> &backfield,
+            Cell *parent);
     virtual ~Figure();
 
     // Принимает массив указателей на Cell

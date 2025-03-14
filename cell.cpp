@@ -1,9 +1,7 @@
 #include "cell.h"
 
-Cell::Cell (QFrame *&newWidget)
+Cell::Cell (QFrame *parent) : QFrame (parent)
 {
-
-
     createLayout ();
 
     setStyleSheet ("border: 1px solid black;");

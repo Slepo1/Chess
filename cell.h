@@ -24,7 +24,7 @@ class Cell : public QFrame
     QHBoxLayout &getLayout ();
 
 public:
-    Cell (QFrame *&newWidget);
+    Cell (QFrame *parent);
 
     void newResize ();
 

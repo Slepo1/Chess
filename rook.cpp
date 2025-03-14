@@ -1,7 +1,8 @@
 #include "rook.h"
 
-
-Rook::Rook (Color color, const QVector<QVector<Cell*>>& backfield, QWidget *parent) : Figure (color, backfield, parent)
+Rook::Rook (Color color, const QVector<QVector<Cell *>> &backfield,
+            Cell *parent)
+    : Figure (color, backfield, parent)
 {
     QPixmap pixmap;
     switch (getColor ())

@@ -8,7 +8,7 @@ class Rook : public Figure
     Q_OBJECT
 public:
     Rook (Color color, const QVector<QVector<Cell *>> &backfield,
-          QWidget *parent = nullptr);
+          Cell *parent = nullptr);
     ~Rook ();
 
     // Надо в аргумент закинуть массив Cell'ов
