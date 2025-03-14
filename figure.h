@@ -12,6 +12,12 @@ class Figure : public QLabel
 public:
     enum Color {WHITE, BLACK};
 
+    struct
+    {
+        int column;
+        int row;
+    } index;
+
     Figure (Color color, const QVector<QVector<Cell *>> &backfield,
             Cell *parent);
     virtual ~Figure();
@@ -24,14 +30,20 @@ public:
 private:
     Color m_color;
 
+    Cell *parent;
+
     // Логика перемещения для белой ладьи
     virtual void performActionForWhite ();
 
     // Логика перемещения для чёрной ладьи
     virtual void performActionForBlack ();
 
+    // Поиск индексов клетки в которой находится фигура
+    void getIndexCell();
+
 protected:
     const QVector<QVector<Cell*>>& m_backfield;
+
 };
 
 

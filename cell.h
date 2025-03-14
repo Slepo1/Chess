@@ -23,6 +23,12 @@ class Cell : public QFrame
 
     QHBoxLayout &getLayout ();
 
+    // Флаг означающий можно ли ставить туда фигуру
+    bool m_possible;
+
+    // Храним базовый styleSheet
+    QString baseStyleSheet;
+
 public:
     Cell (QFrame *parent);
 
@@ -31,6 +37,14 @@ public:
     // Метод лучше оставить отдельный, тк будем проверять checkfig заполненность клетки
     void addFig (Figure *figure);
 
+    void setPossibleCell (bool possible);
+
+    // Достать указатель на фигуру в этой клетке
+    Figure figure ();
+
+    void saveStyleSheet ();
+
+    void setBaseStyleSheet ();
 };
 
 

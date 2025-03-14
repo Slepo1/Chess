@@ -65,6 +65,16 @@ private:
     // Теперь добавляет QLabel на весь Cell, а также центрирует его
     //void addFig (Figure *figure);
 
+    /** Этот прикол делается только потому, что если в конструкторе Cell сохранять
+     * baseStyleSheet, то styleSheet из qt designer он не сохраняет почему-то, а
+     * из конструктора mainwindow уже сохраняет с параметрами установленными в
+     * qt designer
+     */
+    void saveCellColor ();
+
+    // Закрашивание обратно в обычный цвет Cell'a
+    void setCellBaseColor ();
+
     // Чтобы все виджеты в gridLayout имели одинаковые размеры
     void stretchCoef ();
 };

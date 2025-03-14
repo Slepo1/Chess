@@ -5,6 +5,8 @@ Cell::Cell (QFrame *parent) : QFrame (parent)
     createLayout ();
 
     setStyleSheet ("border: 1px solid black;");
+
+
 }
 
 void Cell::newResize ()
@@ -29,7 +31,6 @@ QHBoxLayout &Cell::getLayout ()
 
 bool Cell::checkFig ()
 {
-
     // Поиск внутри Cell'a объекта типа QLabel или его наследников
     QList<QLabel*> labels = this->findChildren<QLabel*>();
     if (!labels.isEmpty())
@@ -46,36 +47,56 @@ void Cell::addFig (Figure *figure)
 {
     if (checkFig () == true)
     {
-        // Нужно прописать логику в случае на данной клетке уже есть фигура
+        // Нужно прописать логику в случае если на данной клетке уже есть фигура
         return;
     }
     getLayout ().addWidget (figure);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/*void Cell::createLayout ()
+void Cell::setPossibleCell (bool possible)
 {
 
+    //setStyleSheet("background-color: red;");
 
 
-    QHBoxLayout *horizontalLayout = new QHBoxLayout (this);
-    horizontalLayout->setObjectName ("layout" + this->objectName());
+    m_possible = possible;
+    if (m_possible)
+    {
+        // qss сказал мне идти нахуй, поэтому будем делать через setStyleSheet
 
-    QLabel *fig = new QLabel (this);
-    fig->setObjectName("fig" + this->objectName());
+        setStyleSheet("background-color: green;");
+    }
+    else
+    {
+        // qss сказал мне идти нахуй, поэтому будем делать через setStyleSheet
+        setStyleSheet(baseStyleSheet);
+    }
 
-    horizontalLayout->addWidget(fig);
+}
 
-    fig->setText("PRIKOL");
+
+
+/*Figure Cell::figure ()
+{
+
+    // Поиск внутри Cell'a объекта типа QLabel или его наследников
+    QList<Figure*> figures = this->findChildren<Figure*>();
+    if (figures.isEmpty())
+    {
+        // Если нет Figure (QLabel)
+        qDebug () << "Не найдена фигура в клетке";
+        return {};
+    }
+    return figures[0];
+
 }*/
 
+void Cell::saveStyleSheet ()
+{
+    baseStyleSheet = styleSheet ();
+}
+
+void Cell::setBaseStyleSheet ()
+{
+    setStyleSheet (baseStyleSheet);
+}

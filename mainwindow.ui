@@ -709,6 +709,9 @@ background-color: rgb(149, 145, 130);
          </item>
          <item row="9" column="6">
           <widget class="QLabel" name="label_16">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
            <property name="text">
             <string>F</string>
            </property>
@@ -1049,6 +1052,9 @@ background-color: rgb(53, 30, 13);
          </item>
          <item row="8" column="8">
           <widget class="Cell" name="cell_64">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 255);
 background-color: rgb(149, 145, 130);
@@ -1181,13 +1187,13 @@ background-color: rgb(53, 30, 13);
 Cell {border: 1px solid black;}</string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::NoFrame</enum>
+            <enum>QFrame::Box</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
+            <enum>QFrame::Plain</enum>
            </property>
            <property name="lineWidth">
-            <number>1</number>
+            <number>2</number>
            </property>
           </widget>
          </item>

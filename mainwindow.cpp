@@ -23,6 +23,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
+    saveCellColor ();
+
     stretchCoef ();
 }
 
@@ -99,8 +101,8 @@ void MainWindow::mousePressEvent (QMouseEvent *event)
 
     if (clickProcess () == true)
     {
-        // Логика если пользователь уже нажал на figure
-
+        // Логика если был клик на figure
+        setCellBaseColor ();
 
 
         // Процесс клика выключаем
@@ -138,6 +140,28 @@ void MainWindow::clickOnFig (Figure *figure)
 
 }
 
+
+void MainWindow::saveCellColor ()
+{
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            backfield[i][j]->saveStyleSheet ();
+        }
+    }
+}
+
+void MainWindow::setCellBaseColor ()
+{
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            backfield[i][j]->setBaseStyleSheet ();
+        }
+    }
+}
 
 void MainWindow::stretchCoef ()
 {

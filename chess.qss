@@ -7,6 +7,16 @@ QLineEdit {
     selection-background-color: #3A5F84;
 }
 
-/*QFrame#background {
-    background-color: rgb(40, 17, 17);
-}*/
+QFrame
+{
+    background-color: yellow;
+}
+
+.CellActive
+{
+    background-color: yellow !important;;
+}
+
+* {
+    background-color: #black !important;; /* Чёрный фон для всех виджетов */
+}

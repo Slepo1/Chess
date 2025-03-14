@@ -22,9 +22,6 @@ void MainWindow::setupFigure ()
     whiteFigure[14] = new Figure (Figure::WHITE, backfield, backfield[6][6]);
     whiteFigure[15] = new Figure (Figure::WHITE, backfield, backfield[6][7]);
 
-    /// Возможно проблема в том, что раньше я добавлял объект именно с помощью
-    /// addFig, а сейчас конструктор сам создает объекты и это может быть
-    /// проблемой
 
     //backfield[7][0]->addFig (whiteFigure[0]);
     //backfield[7][7]->addFig (whiteFigure[7]);
