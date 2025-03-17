@@ -2,6 +2,7 @@
 
 #include <QLabel>
 #include <QObject>
+#include "colors.h"
 
 class Cell;
 
@@ -10,7 +11,6 @@ class Figure : public QLabel
     Q_OBJECT
 
 public:
-    enum Color {WHITE, BLACK};
 
     struct
     {
@@ -32,10 +32,10 @@ private:
 
     Cell *parent;
 
-    // Логика перемещения для белой ладьи
+    // Логика перемещения для белой фигуры
     virtual void performActionForWhite ();
 
-    // Логика перемещения для чёрной ладьи
+    // Логика перемещения для чёрной фигуры
     virtual void performActionForBlack ();
 
     // Поиск индексов клетки в которой находится фигура

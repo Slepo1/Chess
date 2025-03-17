@@ -1,6 +1,6 @@
 #include "cell.h"
 
-Cell::Cell (QFrame *parent) : QFrame (parent)
+Cell::Cell (QFrame *parent) : QFrame (parent), stats (GameStats::getInstance ())
 {
     createLayout ();
 
@@ -55,28 +55,39 @@ void Cell::addFig (Figure *figure)
 
 void Cell::setPossibleCell (bool possible)
 {
+    // Здесь надо прописать логику, если на клетке присутствует дружественная/вражеская фигура
+    if (checkFig () == true)
+    {
+        // Проверяем принадлежность по цвету с цветом текущего хода
+        if (colorFigure () == Color::WHITE)
+        {
+
+        }
+        // Надо понять как реализовать ходы, вероятно всёже глобальных ход надо делать в mainwindow
+        // + пока что создам просто pushbutton который ("Следующий ход!")
+        return;
+    }
+
 
     //setStyleSheet("background-color: red;");
-
 
     m_possible = possible;
     if (m_possible)
     {
         // qss сказал мне идти нахуй, поэтому будем делать через setStyleSheet
-
         setStyleSheet("background-color: green;");
+
     }
     else
     {
         // qss сказал мне идти нахуй, поэтому будем делать через setStyleSheet
         setStyleSheet(baseStyleSheet);
+
     }
 
 }
 
-
-
-/*Figure Cell::figure ()
+Color Cell::colorFigure ()
 {
 
     // Поиск внутри Cell'a объекта типа QLabel или его наследников
@@ -85,11 +96,11 @@ void Cell::setPossibleCell (bool possible)
     {
         // Если нет Figure (QLabel)
         qDebug () << "Не найдена фигура в клетке";
-        return {};
+        return Color::NONE;
     }
-    return figures[0];
+    return figures[0]->getColor ();
 
-}*/
+}
 
 void Cell::saveStyleSheet ()
 {

@@ -6,6 +6,7 @@
 #include "cell.h"
 #include "figure.h"
 #include "rook.h"
+#include "gamestats.h"
 
 // Кол-во фигур одного цвета
 static constexpr int FIGURE_COUNT = 16;
@@ -29,8 +30,16 @@ public:
 
     void setClickProcess (bool clicking) { clickProcessing = clicking; }
 
+private slots:
+    void on_butNextStep_clicked();
+
+    void updateCountStep ();
+
 private:
     Ui::MainWindow *ui;
+
+    // Объект игровой статистики
+    GameStats &stats;
 
     // Флаг означающий нажал ли пользователь на фигуру или нет
     bool clickProcessing;

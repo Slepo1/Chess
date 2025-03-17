@@ -1,9 +1,9 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow (QWidget *parent)
+    : QMainWindow (parent), ui (new Ui::MainWindow),
+      stats (GameStats::getInstance ())
 {
     ui->setupUi(this);
 
@@ -19,9 +19,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     setupFigure ();
 
-    //addFig ();
+    // Подключение слотов изменения счётчика хода
+    if(!connect (&stats, SIGNAL(changeCountStep()), this, SLOT(updateCountStep ())))
+        throw;
 
-
+    // Устанавливаем начальный номер хода и стартовый цвет
+    stats.setNumberCurrentTurn (1);
+    stats.setCurrentColorTurn (WHITE);
 
     saveCellColor ();
 
@@ -120,7 +124,14 @@ void MainWindow::mousePressEvent (QMouseEvent *event)
             clickOnFig (specificChild);
 
             // Процесс клика включаем только если пользователь нажал на фигуру
-            setClickProcess (true);
+            if (clickProcess () == true)
+            {
+                setClickProcess (false);
+            }
+            else
+            {
+                setClickProcess (true);
+            }
         }
 
 
@@ -172,4 +183,31 @@ void MainWindow::stretchCoef ()
         ui->gridLayout->setColumnStretch(i, 1);
     }
 
+}
+
+void MainWindow::on_butNextStep_clicked()
+{
+    stats.nextNumberCurrentTurn ();
+}
+
+void MainWindow::updateCountStep ()
+{
+    // При изменении хода обновляем значение в UI
+    ui->lblCurrentStep->setText (QString::number (stats.numberCurrentTurn ()));
+
+    // Обновляем цвет в зависимости номера хода
+    if (stats.numberCurrentTurn () % 2 == 1)
+        stats.setCurrentColorTurn (WHITE);
+    else
+        stats.setCurrentColorTurn (BLACK);
+
+
+    if (stats.currentColorTurn () == WHITE)
+    {
+        ui->lblCurrentColor->setText("Белых");
+    }
+    else if (stats.currentColorTurn () == BLACK)
+    {
+        ui->lblCurrentColor->setText("Чёрных");
+    }
 }

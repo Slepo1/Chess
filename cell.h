@@ -8,10 +8,14 @@
 #include <QPoint>
 #include <QMouseEvent>
 #include "figure.h"
+#include "gamestats.h"
 
 class Cell : public QFrame
 {
     Q_OBJECT
+
+    // Объект игровой статистики
+    GameStats &stats;
 
     void createLayout ();
 
@@ -40,7 +44,7 @@ public:
     void setPossibleCell (bool possible);
 
     // Достать указатель на фигуру в этой клетке
-    Figure figure ();
+    Color colorFigure ();
 
     void saveStyleSheet ();
 
