@@ -3,7 +3,7 @@
 
 Figure::Figure (Color color, const QVector<QVector<Cell *>> &backfield,
                 Cell *parent)
-    : m_color (color), m_backfield (backfield)
+    : m_color (color), m_backfield (backfield), stats (GameStats::getInstance ())
 {
     // Центрируем фигуру
     setAlignment(Qt::AlignCenter);
@@ -29,8 +29,6 @@ Figure::~Figure ()
 
 void Figure::calculateMove ()
 {
-    // Надо обновить индексы местонахождения фигуры перед ходом
-    getIndexCell ();
     // Логика перемещения
     switch (getColor ())
     {

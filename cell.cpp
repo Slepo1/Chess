@@ -59,13 +59,15 @@ void Cell::setPossibleCell (bool possible)
     if (checkFig () == true)
     {
         // Проверяем принадлежность по цвету с цветом текущего хода
-        if (colorFigure () == Color::WHITE)
+        if (colorFigure () == stats.currentColorTurn ())
+        {
+            // Союзная фигура на клетке
+            return;
+        }
+        else
         {
 
         }
-        // Надо понять как реализовать ходы, вероятно всёже глобальных ход надо делать в mainwindow
-        // + пока что создам просто pushbutton который ("Следующий ход!")
-        return;
     }
 
 

@@ -3,6 +3,7 @@
 #include <QLabel>
 #include <QObject>
 #include "colors.h"
+#include "gamestats.h"
 
 class Cell;
 
@@ -27,6 +28,8 @@ public:
 
     Color getColor () const { return m_color; }
 
+    // Поиск индексов клетки в которой находится фигура
+    void getIndexCell();
 private:
     Color m_color;
 
@@ -38,12 +41,11 @@ private:
     // Логика перемещения для чёрной фигуры
     virtual void performActionForBlack ();
 
-    // Поиск индексов клетки в которой находится фигура
-    void getIndexCell();
-
 protected:
     const QVector<QVector<Cell*>>& m_backfield;
 
+    // Объект игровой статистики
+    GameStats &stats;
 };
 
 

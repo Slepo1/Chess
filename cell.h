@@ -43,7 +43,7 @@ public:
 
     void setPossibleCell (bool possible);
 
-    // Достать указатель на фигуру в этой клетке
+    // Достать указатель на фигуру внутри клетки
     Color colorFigure ();
 
     void saveStyleSheet ();

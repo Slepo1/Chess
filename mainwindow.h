@@ -60,8 +60,6 @@ private:
     // Загрузка всех фигур на backfield
     void setupFigure ();
 
-
-
     void loadCells ();
 
     void showCells ();
@@ -71,10 +69,7 @@ private:
     // Логика при нажатии мыши на Figure
     void clickOnFig (Figure *figure);
 
-    // Теперь добавляет QLabel на весь Cell, а также центрирует его
-    //void addFig (Figure *figure);
-
-    /** Этот прикол делается только потому, что если в конструкторе Cell сохранять
+    /* Этот прикол делается только потому, что если в конструкторе Cell сохранять
      * baseStyleSheet, то styleSheet из qt designer он не сохраняет почему-то, а
      * из конструктора mainwindow уже сохраняет с параметрами установленными в
      * qt designer
@@ -86,5 +81,8 @@ private:
 
     // Чтобы все виджеты в gridLayout имели одинаковые размеры
     void stretchCoef ();
+
+    // Обновление index'ов всех существующих фигур, в идеале переписать на новый поток!
+    void updateIndexFigures ();
 };
 

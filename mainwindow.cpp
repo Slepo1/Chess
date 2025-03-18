@@ -29,7 +29,12 @@ MainWindow::MainWindow (QWidget *parent)
 
     saveCellColor ();
 
+    updateCountStep ();
+
     stretchCoef ();
+
+    // Надо создать отдельный поток, который каждый ход для каждой фигуры будет считывать getIndexCell, Искать будем по массиву фигур
+    // Потому что сейчас он обновляет каждый раз при calculateMove, при нажатии на фигуру!
 }
 
 MainWindow::~MainWindow()
@@ -185,6 +190,21 @@ void MainWindow::stretchCoef ()
 
 }
 
+void MainWindow::updateIndexFigures ()
+{
+    // Смысл функции запускаться в отдельном потоке
+
+    for (int i = 0; i < whiteFigure.size(); i++)
+    {
+        whiteFigure[i]->getIndexCell ();
+    }
+
+    for (int i = 0; i < blackFigure.size(); i++)
+    {
+        blackFigure[i]->getIndexCell ();
+    }
+}
+
 void MainWindow::on_butNextStep_clicked()
 {
     stats.nextNumberCurrentTurn ();
@@ -210,4 +230,6 @@ void MainWindow::updateCountStep ()
     {
         ui->lblCurrentColor->setText("Чёрных");
     }
+
+    updateIndexFigures ();
 }

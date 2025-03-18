@@ -5,6 +5,8 @@
 void MainWindow::setupFigure ()
 {
     // Пихаем в указатель на Figure нужный нам тип фигуры с указанием родительского виджета
+
+    // Белые фигуры
     whiteFigure[0] = new Rook (Color::WHITE, backfield, backfield[7][0]);
     whiteFigure[1] = new Figure (Color::WHITE, backfield, backfield[7][1]);
     whiteFigure[2] = new Figure (Color::WHITE, backfield, backfield[7][2]);
@@ -23,7 +25,21 @@ void MainWindow::setupFigure ()
     whiteFigure[15] = new Figure (Color::WHITE, backfield, backfield[6][7]);
 
 
-    //backfield[7][0]->addFig (whiteFigure[0]);
-    //backfield[7][7]->addFig (whiteFigure[7]);
-
+    // Чёрные фигуры
+    blackFigure[0] = new Figure (Color::BLACK, backfield, backfield[0][0]);
+    blackFigure[1] = new Figure (Color::BLACK, backfield, backfield[0][1]);
+    blackFigure[2] = new Figure (Color::BLACK, backfield, backfield[0][2]);
+    blackFigure[3] = new Figure (Color::BLACK, backfield, backfield[0][3]);
+    blackFigure[4] = new Figure (Color::BLACK, backfield, backfield[0][4]);
+    blackFigure[5] = new Figure (Color::BLACK, backfield, backfield[0][5]);
+    blackFigure[6] = new Figure (Color::BLACK, backfield, backfield[0][6]);
+    blackFigure[7] = new Figure (Color::BLACK, backfield, backfield[0][7]);
+    blackFigure[8] = new Figure (Color::BLACK, backfield, backfield[1][0]);
+    blackFigure[9] = new Figure (Color::BLACK, backfield, backfield[1][1]);
+    blackFigure[10] = new Figure (Color::BLACK, backfield, backfield[1][2]);
+    blackFigure[11] = new Figure (Color::BLACK, backfield, backfield[1][3]);
+    blackFigure[12] = new Figure (Color::BLACK, backfield, backfield[1][4]);
+    blackFigure[13] = new Figure (Color::BLACK, backfield, backfield[1][5]);
+    blackFigure[14] = new Figure (Color::BLACK, backfield, backfield[1][6]);
+    blackFigure[15] = new Figure (Color::BLACK, backfield, backfield[1][7]);
 }
