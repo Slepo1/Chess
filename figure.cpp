@@ -67,3 +67,10 @@ void Figure::getIndexCell ()
         }
     }
 }
+
+Cell *Figure::getLocationCell ()
+{
+    // Иначе значение parent не обновляется при смене родителя, даже после setParent... :(
+    parent = dynamic_cast<Cell*>(this->parentWidget ());
+    return parent;
+}

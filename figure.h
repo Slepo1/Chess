@@ -30,6 +30,8 @@ public:
 
     // Поиск индексов клетки в которой находится фигура
     void getIndexCell();
+
+    Cell *getLocationCell ();
 private:
     Color m_color;
 

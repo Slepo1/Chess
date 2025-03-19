@@ -15,7 +15,7 @@ void MainWindow::setupFigure ()
     whiteFigure[5] = new Figure (Color::WHITE, backfield, backfield[7][5]);
     whiteFigure[6] = new Figure (Color::WHITE, backfield, backfield[7][6]);
     whiteFigure[7] = new Rook (Color::WHITE, backfield, backfield[7][7]);
-    whiteFigure[8] = new Figure (Color::WHITE, backfield, backfield[6][0]);
+    whiteFigure[8] = new Figure (Color::WHITE, backfield, backfield[4][4]);
     whiteFigure[9] = new Figure (Color::WHITE, backfield, backfield[6][1]);
     whiteFigure[10] = new Figure (Color::WHITE, backfield, backfield[6][2]);
     whiteFigure[11] = new Figure (Color::WHITE, backfield, backfield[6][3]);

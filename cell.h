@@ -43,6 +43,8 @@ public:
 
     void setPossibleCell (bool possible);
 
+    bool possibleCell () { return m_possible; }
+
     // Достать указатель на фигуру внутри клетки
     Color colorFigure ();
 

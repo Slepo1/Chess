@@ -7,6 +7,7 @@
 #include "figure.h"
 #include "rook.h"
 #include "gamestats.h"
+#include <thread>
 
 // Кол-во фигур одного цвета
 static constexpr int FIGURE_COUNT = 16;
@@ -40,6 +41,11 @@ private:
 
     // Объект игровой статистики
     GameStats &stats;
+
+    // Поток который вызывается для обновления
+    std::thread m_threadUpdatePositions;
+
+    Figure *chosenFigure;
 
     // Флаг означающий нажал ли пользователь на фигуру или нет
     bool clickProcessing;
@@ -84,5 +90,12 @@ private:
 
     // Обновление index'ов всех существующих фигур, в идеале переписать на новый поток!
     void updateIndexFigures ();
+
+    // Запускаем новый поток призапуске функции обновления индекса
+    void startUpdatePositionsThread ();
+
+    // Ждём завершения потока, созданного для обновления индексов фигур
+    /// Очень важно при завершении хода, нужно сделать вызов этой функции!!!
+    void waitUpdatePositionThread ();
 };
 

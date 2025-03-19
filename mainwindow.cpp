@@ -39,6 +39,8 @@ MainWindow::MainWindow (QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    waitUpdatePositionThread ();
+
     delete ui;
 }
 
@@ -107,24 +109,65 @@ void MainWindow::showCells ()
 void MainWindow::mousePressEvent (QMouseEvent *event)
 {
     QPoint mousePos = event->position ().toPoint ();
+    QObject *child = childAt (mousePos);
 
     if (clickProcess () == true)
     {
-        // Логика если был клик на figure
+        // Логика если был клик на Cell, на который можно ходить
+        if (auto *specificChildCell = qobject_cast<Cell *> (child))
+        {
+            if (specificChildCell->possibleCell ())
+            {
+                // Логика перестановки выбранной фигуры
+                qDebug() << "";
+                qDebug() << "getLocationCell: " + chosenFigure->getLocationCell ()->objectName();
+                specificChildCell->addFig (chosenFigure);
+                qDebug() << "getLocationCell: " + chosenFigure->getLocationCell ()->objectName();
+
+                // Ознаменование следующего хода
+                stats.nextNumberCurrentTurn ();
+            }
+            // Если клетка не доступна к ходу, то просто ничего не делаем
+        }
+        // Логика если был клик на фигуру вражеского цвета
+        else if (auto *specificChildEnemy = qobject_cast<Figure *> (child))
+        {
+            if (specificChildEnemy->getLocationCell ()->possibleCell () != stats.currentColorTurn ())
+            {
+                // Логика убийства вражеской фигуры и перестановки выбранной
+                //
+
+
+
+
+                // Ознаменование следующего хода
+                stats.nextNumberCurrentTurn ();
+            }
+        }
+
+
+
+
+
+        // Закрашиваем обратно все клетки в базовый цвет
         setCellBaseColor ();
-
-
         // Процесс клика выключаем
         setClickProcess (false);
     }
     else
     {
         qDebug () << mousePos;
-        QObject *child = childAt (mousePos);
 
         // Логика если нажимаемый объект оказался Figure или его наследником
+        /// Надо устраивать проверку на цвет фигуры и глобальный цвет хода
         if (auto *specificChild = qobject_cast<Figure *> (child))
         {
+            // Здесь надо оставить для синхронизации, чтобы перед расчётом хода были обновлённые данные
+            waitUpdatePositionThread ();
+
+
+            // Сохраняем выбранную фигуру
+            chosenFigure = qobject_cast<Figure *> (child);
             // Пользователь нажал на фигуру
             clickOnFig (specificChild);
 
@@ -208,6 +251,11 @@ void MainWindow::updateIndexFigures ()
 void MainWindow::on_butNextStep_clicked()
 {
     stats.nextNumberCurrentTurn ();
+
+    /*qDebug() << "";
+    qDebug() << "getLocationCell: " + whiteFigure[0]->getLocationCell ()->objectName();
+    backfield[4][4]->addFig (whiteFigure[0]);
+    qDebug() << "getLocationCell: " + whiteFigure[0]->getLocationCell ()->objectName();*/
 }
 
 void MainWindow::updateCountStep ()
@@ -231,5 +279,24 @@ void MainWindow::updateCountStep ()
         ui->lblCurrentColor->setText("Чёрных");
     }
 
-    updateIndexFigures ();
+    startUpdatePositionsThread ();
+}
+
+void MainWindow::startUpdatePositionsThread ()
+{
+    // Если каким-то чудом ход завершился не после перестановки фигуры
+    waitUpdatePositionThread ();
+
+    // Чтобы поток обновления фигур не ломался, иначе он вызывается на первом ходу более одного раза до уничтожения
+    if (stats.numberCurrentTurn () == 1)
+        return;
+
+    m_threadUpdatePositions = std::thread(&MainWindow::updateIndexFigures, this);
+}
+
+void MainWindow::waitUpdatePositionThread ()
+{
+    // Только в случае если пользователь нажал на фигуру нам необходимо убедиться что поток завершил обновления индексов позиций
+    if (m_threadUpdatePositions.joinable ())
+                m_threadUpdatePositions.join ();
 }

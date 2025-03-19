@@ -47,9 +47,10 @@ void Cell::addFig (Figure *figure)
 {
     if (checkFig () == true)
     {
-        // Нужно прописать логику в случае если на данной клетке уже есть фигура
+        // Клетка занята
         return;
     }
+
     getLayout ().addWidget (figure);
 }
 
