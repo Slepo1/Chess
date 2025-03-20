@@ -6,6 +6,7 @@
 #include "cell.h"
 #include "figure.h"
 #include "rook.h"
+#include "pawn.h"
 #include "gamestats.h"
 #include <thread>
 
@@ -59,6 +60,9 @@ private:
     // Массив указателей на черные фигуры
     QVector <Figure*> blackFigure;
 
+    // Массив указателей для выбывших фигур
+    QVector <Figure*> killedFigures;
+
     void resizeFigure ();
 
     void setupStyle ();
@@ -69,6 +73,10 @@ private:
     void loadCells ();
 
     void showCells ();
+
+    void showLocationFigures ();
+
+    void updateVectorFigures (Figure *figure);
 
     void mousePressEvent (QMouseEvent *event) override;
 
@@ -83,7 +91,7 @@ private:
     void saveCellColor ();
 
     // Закрашивание обратно в обычный цвет Cell'a
-    void setCellBaseColor ();
+    void setBasePossibleCell ();
 
     // Чтобы все виджеты в gridLayout имели одинаковые размеры
     void stretchCoef ();
@@ -97,5 +105,7 @@ private:
     // Ждём завершения потока, созданного для обновления индексов фигур
     /// Очень важно при завершении хода, нужно сделать вызов этой функции!!!
     void waitUpdatePositionThread ();
+
+    void clearKilledFigures ();
 };
 

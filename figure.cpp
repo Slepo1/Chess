@@ -55,11 +55,12 @@ void Figure::performActionForBlack ()
 
 void Figure::getIndexCell ()
 {
+    // Очень опасная и скорее всего неправильно написанная функция, нельзя писать delete
     for (int i = 0; i < 8; i++)
     {
         for (int j = 0; j < 8; j++)
         {
-            if (parent == m_backfield[i][j])
+            if (getLocationCell ()== m_backfield[i][j])
             {
                 index.column = i;
                 index.row = j;

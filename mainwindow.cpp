@@ -32,14 +32,14 @@ MainWindow::MainWindow (QWidget *parent)
     updateCountStep ();
 
     stretchCoef ();
-
-    // Надо создать отдельный поток, который каждый ход для каждой фигуры будет считывать getIndexCell, Искать будем по массиву фигур
-    // Потому что сейчас он обновляет каждый раз при calculateMove, при нажатии на фигуру!
 }
 
 MainWindow::~MainWindow()
 {
     waitUpdatePositionThread ();
+
+    // Может быть нужно после delete ui поместить
+    clearKilledFigures ();
 
     delete ui;
 }
@@ -106,6 +106,37 @@ void MainWindow::showCells ()
     }
 }
 
+void MainWindow::showLocationFigures ()
+{
+    for (int i = 0; i < whiteFigure.size (); i++)
+    {
+        qDebug () << whiteFigure[i]->objectName () + " column: " +
+                         QString::number (whiteFigure[i]->index.column) +
+                         " row: " + QString::number (whiteFigure[i]->index.row);
+    }
+
+    for (int i = 0; i < blackFigure.size (); i++)
+    {
+        qDebug () << blackFigure[i]->objectName () + " column: " +
+                         QString::number (blackFigure[i]->index.column) +
+                         " row: " + QString::number (blackFigure[i]->index.row);
+    }
+}
+
+void MainWindow::updateVectorFigures (Figure *figure)
+{
+    for (int i = 0; i < whiteFigure.size (); i++)
+    {
+        if (whiteFigure[i] == figure)
+            whiteFigure.remove (i);
+    }
+
+    for (int i = 0; i < blackFigure.size(); i++)
+    {
+        if (blackFigure[i] == figure)
+            blackFigure.remove (i);
+    }
+}
 void MainWindow::mousePressEvent (QMouseEvent *event)
 {
     QPoint mousePos = event->position ().toPoint ();
@@ -119,10 +150,8 @@ void MainWindow::mousePressEvent (QMouseEvent *event)
             if (specificChildCell->possibleCell ())
             {
                 // Логика перестановки выбранной фигуры
-                qDebug() << "";
-                qDebug() << "getLocationCell: " + chosenFigure->getLocationCell ()->objectName();
+                qDebug() << "Фигура переставлена на пустую клетку";
                 specificChildCell->addFig (chosenFigure);
-                qDebug() << "getLocationCell: " + chosenFigure->getLocationCell ()->objectName();
 
                 // Ознаменование следующего хода
                 stats.nextNumberCurrentTurn ();
@@ -134,14 +163,22 @@ void MainWindow::mousePressEvent (QMouseEvent *event)
         {
             if (specificChildEnemy->getLocationCell ()->possibleCell () != stats.currentColorTurn ())
             {
+                Cell *chosenCell = specificChildEnemy->getLocationCell ();
+
                 // Логика убийства вражеской фигуры и перестановки выбранной
-                //
+                Figure *killedFigure = qobject_cast<Figure *> (specificChildEnemy);
 
 
+                // Обновляем вектор оставшихся фигур, и перемещаем новую фигуру на место старой
+                killedFigures.push_back (killedFigure);
+                updateVectorFigures (killedFigure);
+                chosenCell->removeFig (killedFigure);
+                chosenCell->addFig (chosenFigure);
 
 
                 // Ознаменование следующего хода
                 stats.nextNumberCurrentTurn ();
+                showLocationFigures ();
             }
         }
 
@@ -150,7 +187,7 @@ void MainWindow::mousePressEvent (QMouseEvent *event)
 
 
         // Закрашиваем обратно все клетки в базовый цвет
-        setCellBaseColor ();
+        setBasePossibleCell ();
         // Процесс клика выключаем
         setClickProcess (false);
     }
@@ -162,6 +199,11 @@ void MainWindow::mousePressEvent (QMouseEvent *event)
         /// Надо устраивать проверку на цвет фигуры и глобальный цвет хода
         if (auto *specificChild = qobject_cast<Figure *> (child))
         {
+            // Если первый клик пользователя был на вражескую фигуру, то реагировать на это не нужно
+            if (specificChild->getColor () != stats.currentColorTurn ())
+                return;
+
+
             // Здесь надо оставить для синхронизации, чтобы перед расчётом хода были обновлённые данные
             waitUpdatePositionThread ();
 
@@ -211,13 +253,14 @@ void MainWindow::saveCellColor ()
     }
 }
 
-void MainWindow::setCellBaseColor ()
+void MainWindow::setBasePossibleCell ()
 {
     for (int i = 0; i < 8; i++)
     {
         for (int j = 0; j < 8; j++)
         {
-            backfield[i][j]->setBaseStyleSheet ();
+            // Вот здесь checkFig (вызывается на местах где есть клетки)
+            backfield[i][j]->setPossibleCell (false);
         }
     }
 }
@@ -235,8 +278,7 @@ void MainWindow::stretchCoef ()
 
 void MainWindow::updateIndexFigures ()
 {
-    // Смысл функции запускаться в отдельном потоке
-
+    // Запускается в отдельном потоке
     for (int i = 0; i < whiteFigure.size(); i++)
     {
         whiteFigure[i]->getIndexCell ();
@@ -299,4 +341,12 @@ void MainWindow::waitUpdatePositionThread ()
     // Только в случае если пользователь нажал на фигуру нам необходимо убедиться что поток завершил обновления индексов позиций
     if (m_threadUpdatePositions.joinable ())
                 m_threadUpdatePositions.join ();
+}
+
+void MainWindow::clearKilledFigures ()
+{
+    for (int i = 0; i < killedFigures.size(); i++)
+    {
+        delete killedFigures[i];
+    }
 }

@@ -33,13 +33,18 @@ class Cell : public QFrame
     // Храним базовый styleSheet
     QString baseStyleSheet;
 
+    void setBaseStyleSheet ();
+
 public:
     Cell (QFrame *parent);
+    virtual ~Cell ();
 
     void newResize ();
 
     // Метод лучше оставить отдельный, тк будем проверять checkfig заполненность клетки
     void addFig (Figure *figure);
+
+    void removeFig (Figure *figure);
 
     void setPossibleCell (bool possible);
 
@@ -49,8 +54,6 @@ public:
     Color colorFigure ();
 
     void saveStyleSheet ();
-
-    void setBaseStyleSheet ();
 };
 
 

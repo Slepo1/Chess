@@ -9,6 +9,11 @@ Cell::Cell (QFrame *parent) : QFrame (parent), stats (GameStats::getInstance ())
 
 }
 
+Cell::~Cell ()
+{
+
+}
+
 void Cell::newResize ()
 {
     //resize (200, 200);
@@ -36,7 +41,7 @@ bool Cell::checkFig ()
     if (!labels.isEmpty())
     {
         // Если есть хоть одна Figure (QLabel)
-        qDebug () << "Найден объект типа QLabel или наследник";
+        qDebug () << "Найден объект типа QLabel или наследник в клетке " + objectName ();
         return true;
     }
 
@@ -45,7 +50,7 @@ bool Cell::checkFig ()
 
 void Cell::addFig (Figure *figure)
 {
-    if (checkFig () == true)
+    if (checkFig ())
     {
         // Клетка занята
         return;
@@ -54,25 +59,35 @@ void Cell::addFig (Figure *figure)
     getLayout ().addWidget (figure);
 }
 
+void Cell::removeFig (Figure *figure)
+{
+    if (!checkFig ())
+    {
+        // Клетка свободна
+        return;
+    }
+
+    getLayout().removeWidget(figure);
+
+    figure->setParent (nullptr);
+}
+
 void Cell::setPossibleCell (bool possible)
 {
-    // Здесь надо прописать логику, если на клетке присутствует дружественная/вражеская фигура
-    if (checkFig () == true)
+    // Хотим сделать клетку доступной для хода, но нужно проверить какого цвета фигура на ней
+    if (possible == true)
     {
-        // Проверяем принадлежность по цвету с цветом текущего хода
-        if (colorFigure () == stats.currentColorTurn ())
+        if (checkFig () == true)
         {
-            // Союзная фигура на клетке
-            return;
-        }
-        else
-        {
-
+            // Проверяем принадлежность по цвету с цветом текущего хода
+            if (colorFigure () == stats.currentColorTurn ())
+            {
+                // Союзная фигура на клетке
+                return;
+            }
         }
     }
 
-
-    //setStyleSheet("background-color: red;");
 
     m_possible = possible;
     if (m_possible)
@@ -83,11 +98,10 @@ void Cell::setPossibleCell (bool possible)
     }
     else
     {
-        // qss сказал мне идти нахуй, поэтому будем делать через setStyleSheet
-        setStyleSheet(baseStyleSheet);
+        // Перекрашиваем обратно зеленные клетки в базовый цвет
+        setBaseStyleSheet ();
 
     }
-
 }
 
 Color Cell::colorFigure ()
@@ -98,7 +112,6 @@ Color Cell::colorFigure ()
     if (figures.isEmpty())
     {
         // Если нет Figure (QLabel)
-        qDebug () << "Не найдена фигура в клетке";
         return Color::NONE;
     }
     return figures[0]->getColor ();

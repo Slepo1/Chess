@@ -3,13 +3,13 @@
 #include "figure.h"
 #include <QObject>
 
-class Rook : public Figure
+class Pawn : public Figure
 {
     Q_OBJECT
 public:
-    Rook (Color color, const QVector<QVector<Cell *>> &backfield,
+    Pawn (Color color, const QVector<QVector<Cell *>> &backfield,
           Cell *parent = nullptr);
-    ~Rook ();
+    ~Pawn ();
 
 private:
     // Логика перемещения для белой ладьи

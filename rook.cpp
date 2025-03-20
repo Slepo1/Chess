@@ -5,13 +5,10 @@ Rook::Rook (Color color, const QVector<QVector<Cell *>> &backfield,
             Cell *parent)
     : Figure (color, backfield, parent)
 {
-
-    // Figure ставит пустой лейбл и растягивает его на всю клетку, а здесь просто загрузка картинки
     QPixmap pixmap;
     switch (getColor ())
     {
     case WHITE:
-        // Изображение белой ладьи
         pixmap.load (":/wFigures/resources/tatiana/wR.png");
         if (pixmap.isNull ())
         {
@@ -49,9 +46,10 @@ void Rook::performActionForWhite ()
 
 
         // Логика если на пути встречаем фигуру(союзную/вражескую)
-        if (m_backfield[index.column][i]->colorFigure () == stats.currentColorTurn ())
+        if (m_backfield[index.column][i]->
+            colorFigure () == stats.currentColorTurn ())
             break;
-        else if (m_backfield[index.column][i]->colorFigure () != stats.currentColorTurn ())
+        else if ((m_backfield[index.column][i]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[index.column][i]->colorFigure () != Color::NONE))
         {
             m_backfield[index.column][i]->setPossibleCell (true);
             break;
@@ -71,7 +69,7 @@ void Rook::performActionForWhite ()
         // Логика если на пути встречаем фигуру(союзную/вражескую)
         if (m_backfield[index.column][i]->colorFigure () == stats.currentColorTurn ())
             break;
-        else if (m_backfield[index.column][i]->colorFigure () != stats.currentColorTurn ())
+        else if ((m_backfield[index.column][i]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[index.column][i]->colorFigure () != Color::NONE))
         {
             m_backfield[index.column][i]->setPossibleCell (true);
             break;
@@ -91,7 +89,7 @@ void Rook::performActionForWhite ()
         // Логика если на пути встречаем фигуру(союзную/вражескую)
         if (m_backfield[i][index.row]->colorFigure () == stats.currentColorTurn ())
             break;
-        else if (m_backfield[i][index.row]->colorFigure () != stats.currentColorTurn ())
+        else if ((m_backfield[i][index.row]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[i][index.row]->colorFigure () != Color::NONE))
         {
             m_backfield[i][index.row]->setPossibleCell (true);
             break;
@@ -111,7 +109,7 @@ void Rook::performActionForWhite ()
         // Логика если на пути встречаем фигуру(союзную/вражескую)
         if (m_backfield[i][index.row]->colorFigure () == stats.currentColorTurn ())
             break;
-        else if (m_backfield[i][index.row]->colorFigure () != stats.currentColorTurn ())
+        else if ((m_backfield[i][index.row]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[i][index.row]->colorFigure () != Color::NONE))
         {
             m_backfield[i][index.row]->setPossibleCell (true);
             break;
