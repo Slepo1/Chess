@@ -93,14 +93,12 @@ void Cell::setPossibleCell (bool possible)
     if (m_possible)
     {
         // qss сказал мне идти нахуй, поэтому будем делать через setStyleSheet
-        setStyleSheet("background-color: green;");
-
+        setStyleSheet ("background-color: green;");
     }
     else
     {
         // Перекрашиваем обратно зеленные клетки в базовый цвет
         setBaseStyleSheet ();
-
     }
 }
 
@@ -115,7 +113,6 @@ Color Cell::colorFigure ()
         return Color::NONE;
     }
     return figures[0]->getColor ();
-
 }
 
 void Cell::saveStyleSheet ()

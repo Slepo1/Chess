@@ -5,7 +5,10 @@
 #include <QMainWindow>
 #include "cell.h"
 #include "figure.h"
+#include "queen.h"
 #include "rook.h"
+#include "knight.h"
+#include "bishop.h"
 #include "pawn.h"
 #include "gamestats.h"
 #include <thread>

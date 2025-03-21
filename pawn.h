@@ -12,9 +12,9 @@ public:
     ~Pawn ();
 
 private:
-    // Логика перемещения для белой ладьи
+    // Логика перемещения для белой пешки
     void performActionForWhite () override;
 
-    // Логика перемещения для чёрной ладьи
+    // Логика перемещения для чёрной пешки
     void performActionForBlack () override;
 };

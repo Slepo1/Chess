@@ -102,7 +102,6 @@ void MainWindow::showCells ()
             qDebug() << backfield[i][j]->objectName ();
         }
         qDebug () << "\n";
-
     }
 }
 
@@ -161,8 +160,17 @@ void MainWindow::mousePressEvent (QMouseEvent *event)
         // Логика если был клик на фигуру вражеского цвета
         else if (auto *specificChildEnemy = qobject_cast<Figure *> (child))
         {
-            if (specificChildEnemy->getLocationCell ()->possibleCell () != stats.currentColorTurn ())
+            // Надо проверять находится на possibleCell?
+            if (specificChildEnemy->getColor () != stats.currentColorTurn ())
             {
+                if (!specificChildEnemy->getLocationCell ()->possibleCell ())
+                {
+                    setClickProcess (false);
+                    // Закрашиваем обратно все клетки в базовый цвет
+                    setBasePossibleCell ();
+                    return;
+                }
+
                 Cell *chosenCell = specificChildEnemy->getLocationCell ();
 
                 // Логика убийства вражеской фигуры и перестановки выбранной
@@ -213,15 +221,9 @@ void MainWindow::mousePressEvent (QMouseEvent *event)
             // Пользователь нажал на фигуру
             clickOnFig (specificChild);
 
-            // Процесс клика включаем только если пользователь нажал на фигуру
-            if (clickProcess () == true)
-            {
-                setClickProcess (false);
-            }
-            else
-            {
-                setClickProcess (true);
-            }
+
+            // Включаем процес клика, тк пользователь нажал на свою фигуру
+            setClickProcess (true);
         }
 
 
@@ -288,6 +290,7 @@ void MainWindow::updateIndexFigures ()
     {
         blackFigure[i]->getIndexCell ();
     }
+    // Видимо обновление индексов у черных фигур не происходит
 }
 
 void MainWindow::on_butNextStep_clicked()

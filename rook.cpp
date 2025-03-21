@@ -10,6 +10,7 @@ Rook::Rook (Color color, const QVector<QVector<Cell *>> &backfield,
     {
     case WHITE:
         pixmap.load (":/wFigures/resources/tatiana/wR.png");
+        setObjectName ("White_Rook_" + parent->objectName ());
         if (pixmap.isNull ())
         {
             throw std::runtime_error("Изображение для белой ладьи не найдено");
@@ -17,8 +18,8 @@ Rook::Rook (Color color, const QVector<QVector<Cell *>> &backfield,
         setPixmap (pixmap);
         break;
     case BLACK:
-        // Изображение чёрной ладьи
         pixmap.load (":/bFigures/resources/tatiana/bR.png");
+        setObjectName ("Black_Pawn_" + parent->objectName ());
         if (pixmap.isNull ())
         {
             throw std::runtime_error("Изображение для чёрной ладьи не найдено");
@@ -28,6 +29,7 @@ Rook::Rook (Color color, const QVector<QVector<Cell *>> &backfield,
     default:
         break;
     }
+
 }
 
 Rook::~Rook ()
@@ -46,16 +48,16 @@ void Rook::performActionForWhite ()
 
 
         // Логика если на пути встречаем фигуру(союзную/вражескую)
-        if (m_backfield[index.column][i]->
+        if (m_backfield[i][index.column]->
             colorFigure () == stats.currentColorTurn ())
             break;
-        else if ((m_backfield[index.column][i]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[index.column][i]->colorFigure () != Color::NONE))
+        else if ((m_backfield[i][index.column]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[i][index.column]->colorFigure () != Color::NONE))
         {
-            m_backfield[index.column][i]->setPossibleCell (true);
+            m_backfield[i][index.column]->setPossibleCell (true);
             break;
         }
 
-        m_backfield[index.column][i]->setPossibleCell (true);
+        m_backfield[i][index.column]->setPossibleCell (true);
     }
 
     // Пройдемся по строкам вниз
@@ -67,15 +69,15 @@ void Rook::performActionForWhite ()
 
 
         // Логика если на пути встречаем фигуру(союзную/вражескую)
-        if (m_backfield[index.column][i]->colorFigure () == stats.currentColorTurn ())
+        if (m_backfield[i][index.column]->colorFigure () == stats.currentColorTurn ())
             break;
-        else if ((m_backfield[index.column][i]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[index.column][i]->colorFigure () != Color::NONE))
+        else if ((m_backfield[i][index.column]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[i][index.column]->colorFigure () != Color::NONE))
         {
-            m_backfield[index.column][i]->setPossibleCell (true);
+            m_backfield[i][index.column]->setPossibleCell (true);
             break;
         }
 
-        m_backfield[index.column][i]->setPossibleCell (true);
+        m_backfield[i][index.column]->setPossibleCell (true);
     }
 
     // Пройдемся по колоннам вправо
@@ -87,15 +89,15 @@ void Rook::performActionForWhite ()
 
 
         // Логика если на пути встречаем фигуру(союзную/вражескую)
-        if (m_backfield[i][index.row]->colorFigure () == stats.currentColorTurn ())
+        if (m_backfield[index.row][i]->colorFigure () == stats.currentColorTurn ())
             break;
-        else if ((m_backfield[i][index.row]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[i][index.row]->colorFigure () != Color::NONE))
+        else if ((m_backfield[index.row][i]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[index.row][i]->colorFigure () != Color::NONE))
         {
-            m_backfield[i][index.row]->setPossibleCell (true);
+            m_backfield[index.row][i]->setPossibleCell (true);
             break;
         }
 
-        m_backfield[i][index.row]->setPossibleCell (true);
+        m_backfield[index.row][i]->setPossibleCell (true);
     }
 
            // Пройдемся по колоннам влево
@@ -107,42 +109,100 @@ void Rook::performActionForWhite ()
 
 
         // Логика если на пути встречаем фигуру(союзную/вражескую)
-        if (m_backfield[i][index.row]->colorFigure () == stats.currentColorTurn ())
+        if (m_backfield[index.row][i]->colorFigure () == stats.currentColorTurn ())
             break;
-        else if ((m_backfield[i][index.row]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[i][index.row]->colorFigure () != Color::NONE))
+        else if ((m_backfield[index.row][i]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[index.row][i]->colorFigure () != Color::NONE))
         {
-            m_backfield[i][index.row]->setPossibleCell (true);
+            m_backfield[index.row][i]->setPossibleCell (true);
             break;
         }
 
-        m_backfield[i][index.row]->setPossibleCell (true);
+        m_backfield[index.row][i]->setPossibleCell (true);
     }
 }
 
 void Rook::performActionForBlack ()
 {
     // Пройдемся по строкам вверх
-    for (int i = index.row; i > 0; i--)
+    for (int i = index.row - 1; i >= 0; i--)
     {
-        m_backfield[index.column][i]->setPossibleCell (true);
+        // Проверка на границу клетки
+        if (index.row == 0)
+            break;
+
+
+               // Логика если на пути встречаем фигуру(союзную/вражескую)
+        if (m_backfield[i][index.column]->
+            colorFigure () == stats.currentColorTurn ())
+            break;
+        else if (m_backfield[i][index.column]->colorFigure () !=
+                      stats.currentColorTurn () &&
+                  m_backfield[i][index.column]->colorFigure () != Color::NONE)
+        {
+            m_backfield[i][index.column]->setPossibleCell (true);
+            break;
+        }
+
+        m_backfield[i][index.column]->setPossibleCell (true);
     }
 
            // Пройдемся по строкам вниз
-    for (int i = index.row; i < 8; i++)
+    for (int i = index.row + 1; i < 8; i++)
     {
-        m_backfield[index.column][i]->setPossibleCell (true);
+        // Проверка на границу клетки
+        if (index.row == 7)
+            break;
+
+
+               // Логика если на пути встречаем фигуру(союзную/вражескую)
+        if (m_backfield[i][index.column]->colorFigure () == stats.currentColorTurn ())
+            break;
+        else if ((m_backfield[i][index.column]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[i][index.column]->colorFigure () != Color::NONE))
+        {
+            m_backfield[i][index.column]->setPossibleCell (true);
+            break;
+        }
+
+        m_backfield[i][index.column]->setPossibleCell (true);
     }
 
            // Пройдемся по колоннам вправо
-    for (int i = index.column; i < 8; i++)
+    for (int i = index.column + 1; i < 8; i++)
     {
-        m_backfield[i][index.row]->setPossibleCell (true);
+        // Проверка на границу клетки
+        if (index.column == 7)
+            break;
+
+
+               // Логика если на пути встречаем фигуру(союзную/вражескую)
+        if (m_backfield[index.row][i]->colorFigure () == stats.currentColorTurn ())
+            break;
+        else if ((m_backfield[index.row][i]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[index.row][i]->colorFigure () != Color::NONE))
+        {
+            m_backfield[index.row][i]->setPossibleCell (true);
+            break;
+        }
+
+        m_backfield[index.row][i]->setPossibleCell (true);
     }
 
            // Пройдемся по колоннам влево
-    for (int i = index.column; i > 0; i--)
+    for (int i = index.column - 1; i >= 0; i--)
     {
-        m_backfield[i][index.row]->setPossibleCell (true);
+        // Проверка на границу клетки
+        if (index.column == 0)
+            break;
+
+        // Логика если на пути встречаем фигуру(союзную/вражескую)
+        if (m_backfield[index.row][i]->colorFigure () == stats.currentColorTurn ())
+            break;
+        else if ((m_backfield[index.row][i]->colorFigure () != stats.currentColorTurn ()) && (m_backfield[index.row][i]->colorFigure () != Color::NONE))
+        {
+            m_backfield[index.row][i]->setPossibleCell (true);
+            break;
+        }
+
+        m_backfield[index.row][i]->setPossibleCell (true);
     }
 }
 
