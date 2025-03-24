@@ -36,6 +36,24 @@ Pawn::~Pawn ()
 {
 }
 
+void Pawn::getIndexCell ()
+{
+    Figure::getIndexCell ();
+
+    // Производная логика пешки о трасформации на последних строках
+    if (getColor () == Color::WHITE && index.row == 0)
+    {
+        // Вызов dialogTransform
+        stats.eventTransformPawn (WHITE);
+    }
+    else if (getColor () == Color::BLACK && index.row == 7)
+    {
+        // Вызов dialogTransform
+        stats.eventTransformPawn (BLACK);
+    }
+
+}
+
 void Pawn::performActionForWhite ()
 {
     /// Просто по очереди проверим 3 клетки перед пешкой
@@ -76,6 +94,19 @@ void Pawn::performActionForWhite ()
             chosenCellColor != Color::NONE)
         {
             m_backfield[index.row - 1][index.column + 1]->setPossibleCell (true);
+        }
+    }
+
+    // Проверка возможности ходить на 2 клетки
+    if ((index.row == 6) && (m_backfield[index.row - 1][index.column]->possibleCell () == true))
+    {
+        Color chosenCellColor =
+            m_backfield[index.row - 2][index.column]->colorFigure ();
+
+        // Проверяем наличие фигуры
+        if (chosenCellColor == Color::NONE)
+        {
+            m_backfield[index.row - 2][index.column]->setPossibleCell (true);
         }
     }
 }
@@ -119,6 +150,19 @@ void Pawn::performActionForBlack ()
             chosenCellColor != Color::NONE)
         {
             m_backfield[index.row + 1][index.column + 1]->setPossibleCell (true);
+        }
+    }
+
+           // Проверка возможности ходить на 2 клетки
+    if ((index.row == 1) && (m_backfield[index.row + 1][index.column]->possibleCell () == true))
+    {
+        Color chosenCellColor =
+            m_backfield[index.row + 2][index.column]->colorFigure ();
+
+        // Проверяем наличие фигуры
+        if (chosenCellColor == Color::NONE)
+        {
+            m_backfield[index.row + 2][index.column]->setPossibleCell (true);
         }
     }
 }

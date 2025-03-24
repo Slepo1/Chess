@@ -11,7 +11,7 @@ void MainWindow::setupFigure ()
     whiteFigure[1] = new Knight (Color::WHITE, backfield, backfield[7][1]);
     whiteFigure[2] = new Bishop (Color::WHITE, backfield, backfield[7][2]);
     whiteFigure[3] = new Queen (Color::WHITE, backfield, backfield[7][3]);
-    whiteFigure[4] = new Figure (Color::WHITE, backfield, backfield[7][4]);
+    whiteFigure[4] = new King (Color::WHITE, backfield, backfield[7][4]);
     whiteFigure[5] = new Bishop (Color::WHITE, backfield, backfield[7][5]);
     whiteFigure[6] = new Knight (Color::WHITE, backfield, backfield[7][6]);
     whiteFigure[7] = new Rook (Color::WHITE, backfield, backfield[7][7]);
@@ -30,7 +30,7 @@ void MainWindow::setupFigure ()
     blackFigure[1] = new Knight (Color::BLACK, backfield, backfield[0][1]);
     blackFigure[2] = new Bishop (Color::BLACK, backfield, backfield[0][2]);
     blackFigure[3] = new Queen (Color::BLACK, backfield, backfield[0][3]);
-    blackFigure[4] = new Figure (Color::BLACK, backfield, backfield[0][4]);
+    blackFigure[4] = new King (Color::BLACK, backfield, backfield[0][4]);
     blackFigure[5] = new Bishop (Color::BLACK, backfield, backfield[0][5]);
     blackFigure[6] = new Knight (Color::BLACK, backfield, backfield[0][6]);
     blackFigure[7] = new Rook (Color::BLACK, backfield, backfield[0][7]);

@@ -27,6 +27,10 @@ MainWindow::MainWindow (QWidget *parent)
     stats.setNumberCurrentTurn (1);
     stats.setCurrentColorTurn (WHITE);
 
+    // Слот по вызову диалога превращения пешки в фигуру
+    if (!connect (&stats, SIGNAL (startTransformPawn (Color)), this, SLOT (transformPawn (Color))))
+        throw;
+
     saveCellColor ();
 
     updateCountStep ();
@@ -325,6 +329,13 @@ void MainWindow::updateCountStep ()
     }
 
     startUpdatePositionsThread ();
+}
+
+void MainWindow::transformPawn (Color color)
+{
+    TransformPawnDialog d (this);
+    if (d.exec () == QDialog::Accepted)
+        ;
 }
 
 void MainWindow::startUpdatePositionsThread ()

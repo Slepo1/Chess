@@ -17,7 +17,6 @@ Knight::Knight (Color color, const QVector<QVector<Cell *>> &backfield,
         setPixmap (pixmap);
         break;
     case BLACK:
-        // Изображение чёрной ладьи
         pixmap.load (":/bFigures/resources/tatiana/bN.png");
         setObjectName ("Black_Knight_" + parent->objectName ());
         if (pixmap.isNull ())

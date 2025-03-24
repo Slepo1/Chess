@@ -29,7 +29,7 @@ public:
     Color getColor () const { return m_color; }
 
     // Поиск индексов клетки в которой находится фигура
-    void getIndexCell();
+    virtual void getIndexCell ();
 
     Cell *getLocationCell ();
 private:

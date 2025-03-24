@@ -5,13 +5,16 @@
 #include <QMainWindow>
 #include "cell.h"
 #include "figure.h"
+#include "king.h"
 #include "queen.h"
 #include "rook.h"
 #include "knight.h"
 #include "bishop.h"
 #include "pawn.h"
 #include "gamestats.h"
+#include "transformpawndialog.h"
 #include <thread>
+#include "colors.h"
 
 // Кол-во фигур одного цвета
 static constexpr int FIGURE_COUNT = 16;
@@ -40,8 +43,12 @@ private slots:
 
     void updateCountStep ();
 
+    void transformPawn (Color color);
+
 private:
     Ui::MainWindow *ui;
+
+    //Pawn *pawn;
 
     // Объект игровой статистики
     GameStats &stats;

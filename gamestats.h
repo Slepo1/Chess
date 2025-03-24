@@ -35,9 +35,14 @@ public:
 
     void nextNumberCurrentTurn ();
 
+    void eventTransformPawn (Color color);
+
 signals:
 
     // Обновление ui если изменился счётчик хода
     void changeCountStep();
+
+    // Превращение пешки в фигуру
+    void startTransformPawn (Color color);
 };
 

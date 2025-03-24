@@ -15,8 +15,6 @@ Figure::Figure (Color color, const QVector<QVector<Cell *>> &backfield,
     // Ставим фигуру на клетку, которую передали при создании в конструкторе
     parent->addFig(this);
 
-    // Привязываю имя для фигуры относительно стартовой клетки
-    //setObjectName ("Figure_" + parent->objectName ());
 
     // Нужно задать начальное значения индексов
     getIndexCell ();

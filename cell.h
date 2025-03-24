@@ -39,7 +39,7 @@ public:
     Cell (QFrame *parent);
     virtual ~Cell ();
 
-    void newResize ();
+    void fixedResize ();
 
     // Метод лучше оставить отдельный, тк будем проверять checkfig заполненность клетки
     void addFig (Figure *figure);

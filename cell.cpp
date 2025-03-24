@@ -6,7 +6,8 @@ Cell::Cell (QFrame *parent) : QFrame (parent), stats (GameStats::getInstance ())
 
     setStyleSheet ("border: 1px solid black;");
 
-
+    // Задаем фиксированный размер Cell
+    fixedResize ();
 }
 
 Cell::~Cell ()
@@ -14,9 +15,14 @@ Cell::~Cell ()
 
 }
 
-void Cell::newResize ()
+void Cell::fixedResize ()
 {
-    //resize (200, 200);
+
+    setMinimumHeight (84);
+    setMinimumWidth (101);
+
+    setMaximumHeight (84);
+    setMaximumWidth (101);
 }
 
 void Cell::createLayout ()
@@ -27,6 +33,7 @@ void Cell::createLayout ()
     // Центрирование содержимого по горизонтали
     horizontalLayout->setAlignment(Qt::AlignCenter);
     horizontalLayout->setObjectName ("layout" + this->objectName ());
+
 }
 
 QHBoxLayout &Cell::getLayout ()

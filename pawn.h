@@ -11,10 +11,13 @@ public:
           Cell *parent = nullptr);
     ~Pawn ();
 
+    void getIndexCell () override;
+
 private:
     // Логика перемещения для белой пешки
     void performActionForWhite () override;
 
     // Логика перемещения для чёрной пешки
     void performActionForBlack () override;
+
 };

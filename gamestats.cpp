@@ -15,3 +15,8 @@ void GameStats::nextNumberCurrentTurn ()
     // Раз меняем значение счётчика хода, пора бы обновить GUI
     emit changeCountStep ();
 }
+
+void GameStats::eventTransformPawn (Color color)
+{
+    emit startTransformPawn (color);
+}
