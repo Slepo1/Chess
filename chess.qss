@@ -9,7 +9,7 @@ QLineEdit {
 
 QFrame
 {
-    background-color: yellow;
+    /*background-color: yellow;*/
 }
 
 .CellActive

@@ -13,14 +13,11 @@ class Figure : public QLabel
 
 public:
 
-    struct
-    {
-        int column;
-        int row;
-    } index;
+    // Местоположение текущей фигуры
+    Index index;
 
     Figure (Color color, const QVector<QVector<Cell *>> &backfield,
-            Cell *parent);
+            Cell *parent = nullptr);
     virtual ~Figure();
 
     // Принимает массив указателей на Cell
@@ -36,6 +33,7 @@ private:
     Color m_color;
 
     Cell *parent;
+
 
     // Логика перемещения для белой фигуры
     virtual void performActionForWhite ();

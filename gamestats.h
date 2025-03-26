@@ -2,6 +2,10 @@
 
 #include <QObject>
 #include "colors.h"
+#include "index.h"
+
+
+class Figure;
 
 // Используем Singleton для хранения статистики в единственном экземпляре
 class GameStats : public QObject
@@ -35,7 +39,10 @@ public:
 
     void nextNumberCurrentTurn ();
 
-    void eventTransformPawn (Color color);
+    void eventTransformPawn (Color color, Index replacement);
+
+    // Местоположение текущей замены пешки
+    Index index;
 
 signals:
 

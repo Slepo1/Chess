@@ -50,7 +50,7 @@ public:
 
     bool possibleCell () { return m_possible; }
 
-    // Достать указатель на фигуру внутри клетки
+    // Достать цвет фигуры внутри клетки
     Color colorFigure ();
 
     void saveStyleSheet ();

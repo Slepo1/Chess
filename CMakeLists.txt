@@ -43,6 +43,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         queen.h queen.cpp
         king.h king.cpp
         transformpawndialog.h transformpawndialog.cpp transformpawndialog.ui
+        index.h
+        notificationwin.h notificationwin.cpp notificationwin.ui
 
     )
 # Define target properties for Android with Qt 6 as:

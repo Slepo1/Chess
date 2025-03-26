@@ -16,7 +16,9 @@ void GameStats::nextNumberCurrentTurn ()
     emit changeCountStep ();
 }
 
-void GameStats::eventTransformPawn (Color color)
+void GameStats::eventTransformPawn (Color color, Index replacement)
 {
+    index = replacement;
+
     emit startTransformPawn (color);
 }

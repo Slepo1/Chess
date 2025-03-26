@@ -44,12 +44,12 @@ void Pawn::getIndexCell ()
     if (getColor () == Color::WHITE && index.row == 0)
     {
         // Вызов dialogTransform
-        stats.eventTransformPawn (WHITE);
+        stats.eventTransformPawn (WHITE, index);
     }
     else if (getColor () == Color::BLACK && index.row == 7)
     {
         // Вызов dialogTransform
-        stats.eventTransformPawn (BLACK);
+        stats.eventTransformPawn (BLACK, index);
     }
 
 }

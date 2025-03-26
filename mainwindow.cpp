@@ -45,6 +45,8 @@ MainWindow::~MainWindow()
     // Может быть нужно после delete ui поместить
     clearKilledFigures ();
 
+    clearTransformFigures ();
+
     delete ui;
 }
 
@@ -187,6 +189,8 @@ void MainWindow::mousePressEvent (QMouseEvent *event)
                 chosenCell->removeFig (killedFigure);
                 chosenCell->addFig (chosenFigure);
 
+                checkWin (killedFigure);
+
 
                 // Ознаменование следующего хода
                 stats.nextNumberCurrentTurn ();
@@ -232,8 +236,24 @@ void MainWindow::mousePressEvent (QMouseEvent *event)
 
 
     }
+}
 
-
+void MainWindow::checkWin (Figure *figure)
+{
+    King *king = dynamic_cast<King*>(figure);
+    if (king != nullptr)
+    {
+        NotificationWin d (stats.currentColorTurn (), this);
+        if (d.exec () == QDialog::Accepted)
+        {
+            close ();
+        }
+        std::cout << "Уничтоженный объект является королём." << std::endl;
+    }
+    else
+    {
+        std::cout << "Уничтоженный объект не является королём." << std::endl;
+    }
 
 }
 
@@ -333,9 +353,64 @@ void MainWindow::updateCountStep ()
 
 void MainWindow::transformPawn (Color color)
 {
-    TransformPawnDialog d (this);
+    // Есть цвет и accept(), есть еще и index из gamestats, и также есть enum который будет возращаться accept ()
+    TransformPawnDialog d (color, this);
     if (d.exec () == QDialog::Accepted)
-        ;
+    {
+        Cell *chosenCell = backfield[stats.index.row][stats.index.column];
+
+        // Поиск внутри Cell'a объекта типа QLabel или его наследников
+        QList<Figure*> figures = chosenCell->findChildren<Figure*>();
+        if (figures.isEmpty())
+        {
+            // Не нашли пешку на указаном индексе
+            return;
+        }
+        Figure *figure = figures[0];
+
+        // В figure -> указатель на пешку
+
+        result = d.getResult();
+
+
+        if (result == ROOK)
+        {
+        // Обновляем вектор оставшихся фигур, и меняем пешку на новую фигуру
+            transformPawns.push_back (figure);
+            updateVectorFigures (figure);
+            chosenCell->removeFig (figure);
+            Figure *newFigure = new Rook (color, backfield, chosenCell);
+            whiteFigure.push_back (newFigure);
+        }
+        else if (result == KNIGHT)
+        {
+            // Обновляем вектор оставшихся фигур, и меняем пешку на новую фигуру
+            transformPawns.push_back (figure);
+            updateVectorFigures (figure);
+            chosenCell->removeFig (figure);
+            Figure *newFigure = new Knight (color, backfield, chosenCell);
+            whiteFigure.push_back (newFigure);
+        }
+        else if (result == BISHOP)
+        {
+            // Обновляем вектор оставшихся фигур, и меняем пешку на новую фигуру
+            transformPawns.push_back (figure);
+            updateVectorFigures (figure);
+            chosenCell->removeFig (figure);
+            Figure *newFigure = new Bishop (color, backfield, chosenCell);
+            whiteFigure.push_back (newFigure);
+        }
+        else if (result == QUEEN)
+        {
+        // Обновляем вектор оставшихся фигур, и меняем пешку на новую фигуру
+            transformPawns.push_back (figure);
+            updateVectorFigures (figure);
+            chosenCell->removeFig (figure);
+            Figure *newFigure = new Queen (color, backfield, chosenCell);
+            whiteFigure.push_back (newFigure);
+        }
+
+    }
 }
 
 void MainWindow::startUpdatePositionsThread ()
@@ -363,4 +438,10 @@ void MainWindow::clearKilledFigures ()
     {
         delete killedFigures[i];
     }
+}
+
+void MainWindow::clearTransformFigures ()
+{
+    for (int i = 0; i < transformPawns.size (); i++)
+        delete transformPawns[i];
 }

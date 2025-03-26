@@ -13,6 +13,7 @@
 #include "pawn.h"
 #include "gamestats.h"
 #include "transformpawndialog.h"
+#include "notificationwin.h"
 #include <thread>
 #include "colors.h"
 
@@ -48,7 +49,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    //Pawn *pawn;
+    int result;
 
     // Объект игровой статистики
     GameStats &stats;
@@ -73,6 +74,9 @@ private:
     // Массив указателей для выбывших фигур
     QVector <Figure*> killedFigures;
 
+    // Массив указателей для замененных пешек
+    QVector <Figure*> transformPawns;
+
     void resizeFigure ();
 
     void setupStyle ();
@@ -89,6 +93,8 @@ private:
     void updateVectorFigures (Figure *figure);
 
     void mousePressEvent (QMouseEvent *event) override;
+
+    void checkWin (Figure *figure);
 
     // Логика при нажатии мыши на Figure
     void clickOnFig (Figure *figure);
@@ -117,5 +123,7 @@ private:
     void waitUpdatePositionThread ();
 
     void clearKilledFigures ();
+
+    void clearTransformFigures ();
 };
 
