@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TransformPawnDialog</class>
+ <widget class="QDialog" name="TransformPawnDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QPushButton" name="butRook">
+     <property name="text">
+      <string>Rook</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="butKnight">
+     <property name="text">
+      <string>Knight</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="butBishop">
+     <property name="text">
+      <string>Bishop</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="butQueen">
+     <property name="text">
+      <string>Queen</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
